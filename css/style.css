@@ -1,0 +1,340 @@
+/*
+
+----IDEE CSS2----
+Changement couleur (mode rampage sang carnage)
+Menu nav à gauche (déroulant)
+Différentes présentations des personnages (description déroulantes)
+
+----TO DO LIST----
+
+Compléter les descriptions de personnages correctement
+Trouver une police convenable
+Ajouter Finn, Linda, Lizzie, Johnny Dogs
+Ajouter bordure d'images
+Gestion du footer
+Nav hover bottom border thicker
+Ajouter formulaire de quizz
+Ajouter systeme de connexion (later)
+Ajouter des classes aux titres à souligner pour mise en forme
+Insertion d'un tableau avec contenu au choix (Episodes des saisons + informations)
+Organisation des commentaires CSS (Ajouter Général)
+Ajouter Nav pour les personnages
+Tester Nav dans le header
+Ajouter JavaScript pour résultat du Quizz
+Gestion mode nuit avec JS même façon que changement d'image onclick JS
+Quizz avec choix d'image pour personnage
+Ajout de questions au fur et à mesure des réponses des questions
+----QUESTIONS----
+
+GENERAL: Insérer une image en tant que background (coulissant)
+GENERAL: Voir pour la bannière complète
+ACCUEIL: Gestion du aside
+PERSONNAGES: Sections sans heading
+PERSONNAGES: Image au centre verticalement quand fenêtré
+SAISONS: Lors d'un dezoom important, tout s'aligne ?
+
+----SOURCES----
+
+https://peaky-blinders.fandom.com/wiki/Peaky_Blinders_Wiki
+https://manofmany.com/entertainment/movies-tv/man-of-character-thomas-shelby-peaky-blinders
+
+*/
+
+
+
+/*----A TRIER----*/
+
+body {
+  background-color: black;
+  color:white;
+  margin: 0px;
+}
+
+#wallpaper{
+  width: 100%;
+}
+
+/*---------------*/
+
+/*----Gestion du header----*/
+
+/*Gestion de la banniere*/
+
+#banniere {
+  width: 100%;
+}
+
+/*Gestion du menu de navigation*/
+#MenuNavigation{
+  display: flex;
+  flex-direction: row;
+}
+
+#MenuNavigation ul {
+  /*Menu sur toute la largeur*/
+  /*width: 100%;*/
+  /*Suppression des bandes noires sur les côtes du menu*/
+  margin-left: -40px;
+  /*margin-right: -10px;*/
+  /*Pour coller le menu à la bannière*/
+  margin-top:-4px;
+  /*Couleur du menu*/
+  background-color: darkslategray;
+  /*Bordures blanches du menu*/
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  /*TESTS
+  display: flex;
+  flex-direction: row;
+  */
+  flex-grow: 1;
+ }
+#MenuNavigation li {
+  /*Retirer les puces des boutons*/
+  display: inline-block;
+  /*Taille des boutons du menu*/
+  width: 230px;
+  height: 80px;
+  /*Délimitation entre chaque boutons du menu*/
+  border-right: 2px solid white;
+  /*border-left: 2px solid white;*/
+  /*Position du texte dans les boutons du menu*/
+  text-align: center;
+  line-height: 80px;
+  /*TESTS*/
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+#MenuNavigation li:hover {
+  /*Soulignage du texte quand on passe la souris dessus*/
+  text-decoration: underline;
+  /*Ajouter peut-être des bordures plus épaisses*/
+}
+#MenuNavigation li a {
+  /*Couleur du texte*/
+  color: white;
+  /*Taille du texte*/
+  font-size: 200%;
+  /*Suppression du soulignage par défaut*/
+  text-decoration:none;
+}
+
+/*-------------------------*/
+
+/*----Gestion de la page d'accueil----*/
+
+#Accueil{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Titre*/
+
+#Accueil h1 {
+  padding-left: 25px;
+  font-size: 4em;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: darkslategray;
+  flex-shrink: 0;
+}
+
+/*Synopsis*/
+
+#Accueil section {
+  flex-basis: 50%;
+  width: 30%;
+}
+
+/*Infomations complémentaires*/
+
+#Accueil aside {
+  flex-grow: 1;
+}
+
+/*------------------------------------*/
+
+/*----Gestion de la page des personnages----*/
+
+/*Gestion du texte de description des personnages*/
+
+#shelby h1 {
+  font-family: 'Fira Sans', sans-serif;
+  padding-left: 25px;
+  font-size: 4em;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: darkslategray;
+}
+#shelby h2 {
+  font-family: 'Fira Sans', sans-serif;
+  padding-left: 25px;
+  font-size:2.5em;
+}
+#shelby p {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 2em;
+  text-align: justify;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+#shelby figure {
+  width:30%;
+}
+
+/*Toutes les légendes de photo dans l'article*/
+
+#shelby figure figcaption{
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+#shelby figure img{
+  width: 100%;
+}
+
+/*Gestion de la mise en forme des blocs*/
+
+/*Thomas Shelby*/
+
+#shelby #thomasshelby{
+  display: flex;
+}
+#thomasshelby figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 30%;
+}
+#thomasshelby figure img{
+  width: 100%;
+}
+#thomasshelby aside{
+  flex-grow: 5;
+}
+
+/*Arthur Shelby*/
+
+#shelby #arthurshelby{
+  display: flex;
+}
+#arthurshelby aside{
+  flex-grow: 5;
+}
+#arthurshelby figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 40%;
+}
+#arthurshelby figure img{
+  width: 100%;
+}
+
+/*John Shelby*/
+
+#shelby #johnshelby{
+  display: flex;
+}
+#johnshelby figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 30%;
+}
+#johnshelby figure img{
+  width: 100%;
+}
+#johnshelby aside{
+  flex-grow: 5;
+}
+
+/*Polly Gray*/
+
+#shelby #pollygray{
+  display: flex;
+}
+#pollygray aside{
+  flex-grow: 5;
+}
+#pollygray figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 40%;
+}
+#pollygray figure img{
+  width: 100%;
+}
+
+/*Michael Gray*/
+
+#shelby #michaelgray{
+  display: flex;
+}
+#michaelgray figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 30%;
+}
+#michaelgray figure img{
+  width: 100%;
+}
+#michaelgray aside{
+  flex-grow: 5;
+}
+
+/*Ada Shelby*/
+
+#shelby #adashelby{
+  display: flex;
+}
+#adashelby aside{
+  flex-grow: 5;
+}
+#adashelby figure{
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 40%;
+}
+#adashelby figure img{
+  width: 100%;
+}
+
+/*Grace Burgess*/
+
+#shelby #graceburgess{
+  display: flex;
+}
+#graceburgess figure{
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 30%;
+}
+#graceburgess figure img{
+  width: 100%;
+}
+#graceburgess aside{
+  flex-grow: 5;
+}
+/*------------------------------------*/
+/*----Gestion de la page du quizz----*/
+#ImageQuestion1{
+  width: 30%;
+  margin-bottom: 10px;
+}
+#personnageQuestion1{
+  margin-top: 5px;
+}
+#QuestionUn,#QuestionDeux,#QuestionTrois,#QuestionQuatre{
+  margin: 30px;
+}
+/*------------------------------------------*/
+/*----Gestion du footer----*/
+
+footer{
+  background-color: darkslategray;
+  width: 100%;
+  border-top: 2px solid white;
+  margin-top: 15px;
+}
+footer p{
+  padding-left: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Peaky Blinders | Quizz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quizz.css">
+    <script src='js/script.js'></script>
+  </head>
+  <body>
+    <header>
+      <img id="banniere" src="images/banniere.jpg" alt="Bannière">
+    </header>
+    <nav id="MenuNavigation">
+      <ul>
+        <li><a href="SiteFilm_Accueil.html">Accueil</a></li>
+        <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
+        <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
+        <li><a href="#">Quizz</a></li>
+      </ul>
+    </nav>
+    <article id ="Quizz">
+      <form id="Questionnaire">
+        <!--          
+          Intro du quizz (petit paragraphe avec titre de la page)
+          
+          Qui est ce personnage ? (Avec image) Input text
+          OU
+          Attribuer un personnage à un nom avec une liste de la même façon que jeuPays. Liste déroulante
+          
+          Le(s)quel(s) de ces personnages font partie des Peaky Blinders ? Choix multiple (Plusieurs personnages)
+          
+          Dans quel pays se déroule la série ? Choix Unique (Angleterre, Irlande, Ecosse, Pays de Galles)
+
+          Bouton de validation du quizz
+        -->
+        <div id="QuestionUn">
+          <h1>Question 1</h1>
+          <img id="ImageQuestion1" src="images/thomasshelby.png" alt="Thomas Shelby">
+          <br/>
+          <label for="personnageQuestion1">Qui est ce personnage ?</label><br/><br/>
+          <input type="text" name="QuestionPersonnage" id="personnageQuestion1">
+        </div> 
+        <div id="QuestionDeux">
+          <h1>Question 2</h1>
+          <p>
+            Dans quel pays se déroule la série ?<br/><br/>
+            <input type="radio" name="QuestionPays" value="Angleterre" id="ANG"/><label for="ECO">Angleterre</label><br/>
+            <input type="radio" name="QuestionPays" value="Ecosse" id="ECO"/><label for="ECO">Ecosse</label><br/>
+            <input type="radio" name="QuestionPays" value="Irlande" id="IRL"/><label for="IRL">Irlande</label><br/>
+            <input type="radio" name="QuestionPays" value="Pays de Galles" id="PDG"/><label for="PDG">Pays de Galles</label><br/>
+          </p>
+        </div>
+        <div id="QuestionTrois">
+          <h1>Question 3</h1>
+          <p>
+            Le(s)quel(s) de ces personnages font partie du gang des Peaky Blinders ?<br/><br/>
+            <input type="checkbox" name="ThomasShelby" id="ThSh"/><label for="ThSh">Thomas Shelby</label><br/>
+            <input type="checkbox" name="JonnhyDogs" id="JoDo"/><label for="JoDo">Johnny Dogs</label><br/>
+            <input type="checkbox" name="MichaelGray" id="MiGr"/><label for="MiGr">Michael Gray</label><br/>
+            <input type="checkbox" name="JohnShelby" id="JoSh"/><label for="JoSh">John Shelby</label><br/>
+            <input type="checkbox" name="BillyKimber" id="BiKi"/><label for="BiKi">Billy Kimber</label><br/>
+            <input type="checkbox" name="ArthurShelby" id="ArSh"/><label for="ArSh">Arthur Shelby</label><br/>
+            <input type="checkbox" name="FreddieThorne" id="FrTh"/><label for="FrTh">Freddie Thorne</label><br/>
+            <input type="checkbox" name="AlfieSolomons" id="AlSo"/><label for="AlSo">Alfie Solomons</label><br/>
+          </p>
+        <div id="QuestionQuatre">
+          <h1>Question 4</h1>
+          <p>Qui sont ces personnages ?</p><br/><br/>
+        </div>
+        </div>
+      </form>
+      <input type="button" name="Verifierquestion1" value="VerifQ1" id="Q1V" onclick="VerifQuestion1();">        
+    </article>
+    <footer>
+      <p>
+      © 2019 Aaron BROSSEAU
+      <br/>
+      Tous droits réservés
+      </p>
+    </footer>
+  </body>
+</html>

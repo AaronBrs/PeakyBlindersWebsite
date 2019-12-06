@@ -1,0 +1,8 @@
+.LabelTexteValide{
+    border: 3px solid green;
+    border-radius: 10px;
+}
+.LabelTexteInvalide{
+    border: 3px solid red;
+    border-radius: 10px;
+}
