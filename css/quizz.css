@@ -1,12 +1,12 @@
-.LabelTexteValide{
+.LabelTextCorrect{
     border: 3px solid lightgreen;
     border-radius: 10px;
 }
-.LabelTexteInvalide{
+.LabelTextWrong{
     border: 3px solid red;
     border-radius: 10px;
 }
-.LabelTexteDefault{
+.LabelTextDefault{
     border: 3px solid goldenrod;
     border-radius: 10px;
 }
