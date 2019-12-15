@@ -45,7 +45,7 @@
           <h1>Question 2</h1>
           <p>
             Dans quel pays se déroule la série ?<br/><br/>
-            <input type="radio" name="QuestionPays" value="Angleterre" id="ANG"/><label for="ECO">Angleterre</label><br/>
+            <input type="radio" name="QuestionPays" value="Angleterre" id="ANG"/><label for="ANG">Angleterre</label><br/>
             <input type="radio" name="QuestionPays" value="Ecosse" id="ECO"/><label for="ECO">Ecosse</label><br/>
             <input type="radio" name="QuestionPays" value="Irlande" id="IRL"/><label for="IRL">Irlande</label><br/>
             <input type="radio" name="QuestionPays" value="Pays de Galles" id="PDG"/><label for="PDG">Pays de Galles</label><br/>
@@ -64,10 +64,66 @@
             <input type="checkbox" name="FreddieThorne" id="FrTh"/><label for="FrTh">Freddie Thorne</label><br/>
             <input type="checkbox" name="AlfieSolomons" id="AlSo"/><label for="AlSo">Alfie Solomons</label><br/>
           </p>
+        </div>
         <div id="QuestionQuatre">
           <h1>Question 4</h1>
-          <p>Qui sont ces personnages ?</p><br/><br/>
-        </div>
+          <p>Qui sont ces personnages ?</p>
+          <img src="images/QuizzPerso.png" alt="Personnages Quizz" id="ImageQuizzPerso">
+          <div id="PersoNumero1">
+            1 - 
+            <select name="ListePerso1" id="ListeGrace" class="ListePersoQuizz" onchange="">
+              <option value="" selected>...</option>
+              <option value="Grace">Grace Burgess</option>
+              <option value="Arthur">Arthur Shelby</option>
+              <option value="Polly">Polly Gray</option>
+              <option value="Michael">Michael Gray</option>
+              <option value="John">John Shelby</option>
+            </select>
+          </div>
+          <div id="PersoNumero2">
+            2 - 
+            <select name="ListePerso2" id="ListePolly" class="ListePersoQuizz" onchange="">
+              <option value="" selected>...</option>
+              <option value="Grace">Grace Burgess</option>
+              <option value="Arthur">Arthur Shelby</option>
+              <option value="Polly">Polly Gray</option>
+              <option value="Michael">Michael Gray</option>
+              <option value="John">John Shelby</option>
+            </select>
+          </div>
+          <div id="PersoNumero3">
+            3 - 
+            <select name="ListePerso3" id="ListeArthur" class="ListePersoQuizz" onchange="">
+              <option value="" selected>...</option>
+              <option value="Grace">Grace Burgess</option>
+              <option value="Arthur">Arthur Shelby</option>
+              <option value="Polly">Polly Gray</option>
+              <option value="Michael">Michael Gray</option>
+              <option value="John">John Shelby</option>
+            </select>
+          </div>
+          <div id="PersoNumero4">
+            4 - 
+            <select name="ListePerso4" id="ListeMichael" class="ListePersoQuizz" onchange="">
+              <option value="" selected>...</option>
+              <option value="Grace">Grace Burgess</option>
+              <option value="Arthur">Arthur Shelby</option>
+              <option value="Polly">Polly Gray</option>
+              <option value="Michael">Michael Gray</option>
+              <option value="John">John Shelby</option>
+            </select>
+          </div>
+          <div id="PersoNumero5">
+            5 - 
+            <select name="ListePerso5" id="ListeJohn" class="ListePersoQuizz" onchange="">
+              <option value="" selected>...</option>
+              <option value="Grace">Grace Burgess</option>
+              <option value="Arthur">Arthur Shelby</option>
+              <option value="Polly">Polly Gray</option>
+              <option value="Michael">Michael Gray</option>
+              <option value="John">John Shelby</option>
+            </select>
+          </div>
         </div>
       </form>
       <input type="button" name="Verifierquestion1" value="VerifQ1" id="Q1V" onclick="VerifQuestion1();">        
