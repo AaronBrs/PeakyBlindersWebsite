@@ -10,9 +10,3 @@
     border: 3px solid goldenrod;
     border-radius: 10px;
 }
-.ListePersoQuizz{
-    width: 20em;
-    position: relative;
-    transition: width 0.5s;
-    will-change: width;
-}
