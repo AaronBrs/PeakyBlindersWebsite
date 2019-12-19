@@ -84,7 +84,7 @@ body {
   /*Pour coller le menu à la bannière*/
   margin-top:-4px;
   /*Couleur du menu*/
-  background-color: darkslategray;
+  background-color: #35414a;
   /*Bordures blanches du menu*/
   border-top: 2px solid white;
   border-bottom: 2px solid white;
@@ -329,6 +329,9 @@ body {
 }
 #QuestionUn,#QuestionDeux,#QuestionTrois,#QuestionQuatre{
   margin: 30px;
+}
+#ImageQuizzPerso{
+  width: 60%;
 }
 /*------------------------------------------*/
 /*----Gestion du footer----*/

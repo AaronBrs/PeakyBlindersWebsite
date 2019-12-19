@@ -10,9 +10,9 @@ function VerifQuestion1(){
     reponse=document.getElementById("personnageQuestion1").value;
     console.log(reponse);
     if (ensembleReponse1.has(reponse)){
-        document.getElementById("personnageQuestion1").className='LabelTexteValide';
+        document.getElementById("personnageQuestion1").className='LabelTextCorrect';
     }
     else{
-        document.getElementById("personnageQuestion1").className='LabelTexteInvalide';
+        document.getElementById("personnageQuestion1").className='LabelTextWrong';
     }
 }
