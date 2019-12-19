@@ -1,5 +1,5 @@
 .LabelTextCorrect{
-    border: 3px solid lightgreen;
+    border: 3px solid green;
     border-radius: 10px;
 }
 .LabelTextWrong{
@@ -9,4 +9,13 @@
 .LabelTextDefault{
     border: 3px solid goldenrod;
     border-radius: 10px;
+}
+.ValeurListeCorrect{
+    color: green;
+}
+.ValeurListeIncorrect{
+    color: red;
+}
+.ListePersoQuizz{
+    margin: 5px;
 }

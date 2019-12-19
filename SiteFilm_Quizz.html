@@ -71,62 +71,66 @@
           <img src="images/QuizzPerso.png" alt="Personnages Quizz" id="ImageQuizzPerso">
           <div id="PersoNumero1">
             1 - 
-            <select name="ListePerso1" id="ListeGrace" class="ListePersoQuizz" onchange="">
+            <select name="ListePerso1" id="ListeGrace" class="ListePersoQuizz" onchange="selectionPersonnage(this)">
               <option value="" selected>...</option>
-              <option value="Grace">Grace Burgess</option>
-              <option value="Arthur">Arthur Shelby</option>
-              <option value="Polly">Polly Gray</option>
-              <option value="Michael">Michael Gray</option>
-              <option value="John">John Shelby</option>
+              <option value="Arthur Shelby">Arthur Shelby</option>
+              <option value="Grace Burgess">Grace Burgess</option>
+              <option value="Michael Gray">Michael Gray</option>
+              <option value="Polly Gray">Polly Gray</option>
+              <option value="John Shelby">John Shelby</option>
             </select>
           </div>
           <div id="PersoNumero2">
             2 - 
-            <select name="ListePerso2" id="ListePolly" class="ListePersoQuizz" onchange="">
+            <select name="ListePerso2" id="ListePolly" class="ListePersoQuizz" onchange="selectionPersonnage(this)">
               <option value="" selected>...</option>
-              <option value="Grace">Grace Burgess</option>
-              <option value="Arthur">Arthur Shelby</option>
-              <option value="Polly">Polly Gray</option>
-              <option value="Michael">Michael Gray</option>
-              <option value="John">John Shelby</option>
+              <option value="Arthur Shelby">Arthur Shelby</option>
+              <option value="Grace Burgess">Grace Burgess</option>
+              <option value="Michael Gray">Michael Gray</option>
+              <option value="Polly Gray">Polly Gray</option>
+              <option value="John Shelby">John Shelby</option>
             </select>
           </div>
           <div id="PersoNumero3">
             3 - 
-            <select name="ListePerso3" id="ListeArthur" class="ListePersoQuizz" onchange="">
+            <select name="ListePerso3" id="ListeArthur" class="ListePersoQuizz" onchange="selectionPersonnage(this)">
               <option value="" selected>...</option>
-              <option value="Grace">Grace Burgess</option>
-              <option value="Arthur">Arthur Shelby</option>
-              <option value="Polly">Polly Gray</option>
-              <option value="Michael">Michael Gray</option>
-              <option value="John">John Shelby</option>
+              <option value="Arthur Shelby">Arthur Shelby</option>
+              <option value="Grace Burgess">Grace Burgess</option>
+              <option value="Michael Gray">Michael Gray</option>
+              <option value="Polly Gray">Polly Gray</option>
+              <option value="John Shelby">John Shelby</option>
             </select>
           </div>
           <div id="PersoNumero4">
             4 - 
-            <select name="ListePerso4" id="ListeMichael" class="ListePersoQuizz" onchange="">
+            <select name="ListePerso4" id="ListeMichael" class="ListePersoQuizz" onchange="selectionPersonnage(this)">
               <option value="" selected>...</option>
-              <option value="Grace">Grace Burgess</option>
-              <option value="Arthur">Arthur Shelby</option>
-              <option value="Polly">Polly Gray</option>
-              <option value="Michael">Michael Gray</option>
-              <option value="John">John Shelby</option>
+              <option value="Arthur Shelby">Arthur Shelby</option>
+              <option value="Grace Burgess">Grace Burgess</option>
+              <option value="Michael Gray">Michael Gray</option>
+              <option value="Polly Gray">Polly Gray</option>
+              <option value="John Shelby">John Shelby</option>
             </select>
           </div>
           <div id="PersoNumero5">
             5 - 
-            <select name="ListePerso5" id="ListeJohn" class="ListePersoQuizz" onchange="">
+            <select name="ListePerso5" id="ListeJohn" class="ListePersoQuizz" onchange="selectionPersonnage(this)">
               <option value="" selected>...</option>
-              <option value="Grace">Grace Burgess</option>
-              <option value="Arthur">Arthur Shelby</option>
-              <option value="Polly">Polly Gray</option>
-              <option value="Michael">Michael Gray</option>
-              <option value="John">John Shelby</option>
+              <option value="Arthur Shelby">Arthur Shelby</option>
+              <option value="Grace Burgess">Grace Burgess</option>
+              <option value="Michael Gray">Michael Gray</option>
+              <option value="Polly Gray">Polly Gray</option>
+              <option value="John Shelby">John Shelby</option>
             </select>
           </div>
         </div>
       </form>
-      <input type="button" name="Verifierquestion1" value="VerifQ1" id="Q1V" onclick="VerifQuestion1();">        
+      <input type="button" name="Verifierquestion1" value="VerifQ1" id="Q1V" onclick="VerifQuestion1()">
+      <input type="button" name="Verifierquestion2" value="VerifQ2" id="Q2V" onclick="VerifQuestion2()">
+      <input type="button" name="Verifierquestion3" value="VerifQ3" id="Q3V" onclick="VerifQuestion3()">
+      <input type="button" name="Verifierquestion4" value="VerifQ4" id="Q4V" onclick="VerifQuestion4()">
+      <input type="button" name="Verifiertout" value="VerifAll" id="AllV" onclick="FormValidation()">
     </article>
     <footer>
       <p>
