@@ -6,26 +6,29 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header>
-      <img id="banniere" src="images/banniere.jpg" alt="Bannière">
+    <img id="banniere" src="images/banniere.jpg" alt="Bannière">
+    <header id="En-tête">
       <nav id="MenuNavigation">
-        <ul>
+        <ul class="LiensMenus">
           <li><a href="#">Accueil</a></li>
           <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
           <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
           <li><a href="SiteFilm_Quizz.html">Quizz</a></li>
         </ul>
       </nav>
+      <a class = "BoutonConnexion" href="connexion.php"><button>Connexion</button></a>
     </header>
-    <article id="Accueil">
-      <h1>L'univers Peaky Blinders</h1>
-      <section id="Synopsis">
-        <h2>Synopsis</h2>
-        <p>
-          De retour dans les années 1920, au coeur de la ville de Birmingham, une famille formant un gang qui règne sur le monde illégal britannique.
-          Entre paris illégaux, vols, rackets, violences en tout genre, bérets et rasoirs, le gang Shelby veut s'imposer et devenir les maîtres de la ville ...
-        </p>
-      </section>
+    <div id="Accueil">
+      <article>
+        <h1>L'univers Peaky Blinders</h1>
+        <section id="Synopsis">
+          <h2>Synopsis</h2>
+          <p>
+            De retour dans les années 1920, au coeur de la ville de Birmingham, une famille formant un gang qui règne sur le monde illégal britannique.
+            Entre paris illégaux, vols, rackets, violences en tout genre, bérets et rasoirs, le gang Shelby veut s'imposer et devenir les maîtres de la ville ...
+          </p>
+        </section>
+      </article>
       <aside>
         <h2>Informations complémentaires</h2>
         <section>
@@ -48,7 +51,9 @@
         <section>
           <header>
             <h3>Avis sur la série</h3>
-            <p>Qu'avez-vous pensez de cette série. (textarea plus tard)</p>
+            <p>Qu'avez-vous pensez de cette série ?</p>
+              <textarea name="CommentArea" id="CommentArea" cols="30" rows="10"></textarea><br/>
+              <input type="submit" value="Soumettre votre avis !">
           </header>
         </section>
         <section>
@@ -61,7 +66,7 @@
           </address>
         </section>
       </aside>
-    </article>
+    </div>
     <footer>
       <p>
       © 2019 Aaron BROSSEAU

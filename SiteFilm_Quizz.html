@@ -8,31 +8,22 @@
     <script src='js/script.js'></script>
   </head>
   <body>
-    <header>
-      <img id="banniere" src="images/banniere.jpg" alt="Bannière">
+    <img id="banniere" src="images/banniere.jpg" alt="Bannière">
+    <header id="En-tête">
+      <nav id="MenuNavigation">
+        <ul class="LiensMenus">
+          <li><a href="SiteFilm_Accueil.html">Accueil</a></li>
+          <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
+          <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
+          <li><a href="SiteFilm_Quizz.html">Quizz</a></li>
+        </ul>
+      </nav>
+      <a class = "BoutonConnexion" href="connexion.php"><button>Connexion</button></a>
     </header>
-    <nav id="MenuNavigation">
-      <ul>
-        <li><a href="SiteFilm_Accueil.html">Accueil</a></li>
-        <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
-        <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
-        <li><a href="#">Quizz</a></li>
-      </ul>
-    </nav>
     <article id ="Quizz">
       <form id="Questionnaire">
         <!--          
           Intro du quizz (petit paragraphe avec titre de la page)
-          
-          Qui est ce personnage ? (Avec image) Input text
-          OU
-          Attribuer un personnage à un nom avec une liste de la même façon que jeuPays. Liste déroulante
-          
-          Le(s)quel(s) de ces personnages font partie des Peaky Blinders ? Choix multiple (Plusieurs personnages)
-          
-          Dans quel pays se déroule la série ? Choix Unique (Angleterre, Irlande, Ecosse, Pays de Galles)
-
-          Bouton de validation du quizz
         -->
         <div id="QuestionUn">
           <h1>Question 1</h1>
@@ -50,6 +41,9 @@
             <input type="radio" name="QuestionPays" value="Irlande" id="IRL"/><label for="IRL">Irlande</label><br/>
             <input type="radio" name="QuestionPays" value="Pays de Galles" id="PDG"/><label for="PDG">Pays de Galles</label><br/>
           </p>
+          <div id="ReponseDeux">
+
+          </div>
         </div>
         <div id="QuestionTrois">
           <h1>Question 3</h1>
@@ -64,6 +58,9 @@
             <input type="checkbox" name="FreddieThorne" id="FrTh"/><label for="FrTh">Freddie Thorne</label><br/>
             <input type="checkbox" name="AlfieSolomons" id="AlSo"/><label for="AlSo">Alfie Solomons</label><br/>
           </p>
+          <div id="ReponseTrois">
+            
+          </div>
         </div>
         <div id="QuestionQuatre">
           <h1>Question 4</h1>
@@ -126,11 +123,7 @@
           </div>
         </div>
       </form>
-      <input type="button" name="Verifierquestion1" value="VerifQ1" id="Q1V" onclick="VerifQuestion1()">
-      <input type="button" name="Verifierquestion2" value="VerifQ2" id="Q2V" onclick="VerifQuestion2()">
-      <input type="button" name="Verifierquestion3" value="VerifQ3" id="Q3V" onclick="VerifQuestion3()">
-      <input type="button" name="Verifierquestion4" value="VerifQ4" id="Q4V" onclick="VerifQuestion4()">
-      <input type="button" name="Verifiertout" value="VerifAll" id="AllV" onclick="FormValidation()">
+      <input type="button" name="Verifiertout" value="Verifier vos réponses" id="AllV" onclick="FormValidation()">
     </article>
     <footer>
       <p>

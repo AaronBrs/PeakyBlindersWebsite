@@ -19,3 +19,9 @@
 .ListePersoQuizz{
     margin: 5px;
 }
+.BonneReponse{
+    color:green;
+}
+.MauvaiseReponse{
+    color: red;
+}

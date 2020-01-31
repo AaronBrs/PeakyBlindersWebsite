@@ -7,28 +7,36 @@ Différentes présentations des personnages (description déroulantes)
 
 ----TO DO LIST----
 
-Compléter les descriptions de personnages correctement
+Ajouter Finn, Linda, Lizzie, Johnny Dogs et plus encore May Alfie Isaiah Jeremiah Curly
 Trouver une police convenable
-Ajouter Finn, Linda, Lizzie, Johnny Dogs
 Ajouter bordure d'images
 Gestion du footer
 Nav hover bottom border thicker
-Ajouter formulaire de quizz
-Ajouter systeme de connexion (later)
+Ajouter systeme de connexion
 Ajouter des classes aux titres à souligner pour mise en forme
-Insertion d'un tableau avec contenu au choix (Episodes des saisons + informations)
-Organisation des commentaires CSS (Ajouter Général)
 Ajouter Nav pour les personnages
-Tester Nav dans le header
+Ajouter Nav pour les saisons
 Ajouter JavaScript pour résultat du Quizz
+  Ajout de questions au fur et à mesure des réponses des questions
+  Ajout d'un système de score
+  Quizz avec choix d'image pour personnage
 Gestion mode nuit avec JS même façon que changement d'image onclick JS
-Quizz avec choix d'image pour personnage
-Ajout de questions au fur et à mesure des réponses des questions
+Gestion de la page des saisons 
+  Traduire le résumé des épisodes
+  Ajout d'un bouton pour afficher les résumé des saisons
+  Insertion d'un tableau avec contenu au choix (Episodes des saisons + informations)
+  Gestion du tableau saison CSS
+Organisation des commentaires CSS (Ajouter Général)
+
+Ajouter les sessions et les cookies
+
 BDD Avec au moins 2 tables (Espace Membre) (en relation ou non)
+
 Consulter
 Ajouter
 Supprimer
 Mettre à jour
+
 ----QUESTIONS----
 
 GENERAL: Insérer une image en tant que background (coulissant)
@@ -42,17 +50,50 @@ SAISONS: Lors d'un dezoom important, tout s'aligne ?
 
 https://peaky-blinders.fandom.com/wiki/Peaky_Blinders_Wiki
 https://manofmany.com/entertainment/movies-tv/man-of-character-thomas-shelby-peaky-blinders
+https://peaky-blinders.fandom.com/wiki/Episode_1.1
+https://www.imdb.com/title/tt2442560/episodes?season=1
+https://peaky-blinders.fandom.com/wiki/Lizzie_Stark
+https://peaky-blinders.fandom.com/wiki/Linda_Shelby
+https://peaky-blinders.fandom.com/wiki/Johnny_Dogs
+https://peaky-blinders.fandom.com/wiki/May_Carleton
+https://peaky-blinders.fandom.com/wiki/Finn_Shelby
+https://peaky-blinders.fandom.com/wiki/Alfie_Solomons
+https://peaky-blinders.fandom.com/wiki/Isiah_Jesus
+https://peaky-blinders.fandom.com/wiki/Jeremiah_Jesus
+https://peaky-blinders.fandom.com/wiki/Curly
 
+----TIPS----
+Menu Déroulant
+https://www.w3schools.com/howto/howto_css_dropdown.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
+
+----A RENDRE----
+HTML + CSS
+QUIZZ Avec JS
+BD Avec PHP
+Scripts + URL du projet
+README avec explications du JS + Réponses quizz valides
+Depot Celene Archive -> AS WEB
+BROSSEAU_Aaron_ProjetWeb.tar
+27 Janvier
+3 notes
+HTML CSS
+JS
+PHP
 */
 
 
 
 /*----A TRIER----*/
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap&subset=latin-ext');
 
 body {
-  background-color: black;
-  color:white;
-  margin: 0px;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 500;
+  background-color: #24252A;
+  color: #edf0f1;
+  margin: 0;
+  padding: 0;
 }
 
 #wallpaper{
@@ -61,110 +102,115 @@ body {
 
 /*---------------*/
 
-/*----Gestion du header----*/
-
 /*Gestion de la banniere*/
-
 #banniere {
   width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
-
-/*Gestion du menu de navigation*/
-#MenuNavigation{
-  display: flex;
-  flex-direction: row;
-}
-
-#MenuNavigation ul {
-  /*Menu sur toute la largeur*/
-  /*width: 100%;*/
-  /*Suppression des bandes noires sur les côtes du menu*/
-  margin-left: -40px;
-  /*margin-right: -10px;*/
-  /*Pour coller le menu à la bannière*/
-  margin-top:-4px;
-  /*Couleur du menu*/
-  background-color: #35414a;
-  /*Bordures blanches du menu*/
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  /*TESTS
-  display: flex;
-  flex-direction: row;
-  */
-  flex-grow: 1;
- }
-#MenuNavigation li {
-  /*Retirer les puces des boutons*/
-  display: inline-block;
-  /*Taille des boutons du menu*/
-  width: 230px;
-  height: 80px;
-  /*Délimitation entre chaque boutons du menu*/
-  border-right: 2px solid white;
-  /*border-left: 2px solid white;*/
-  /*Position du texte dans les boutons du menu*/
-  text-align: center;
-  line-height: 80px;
-  /*TESTS*/
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-#MenuNavigation li:hover {
-  /*Soulignage du texte quand on passe la souris dessus*/
-  text-decoration: underline;
-  /*Ajouter peut-être des bordures plus épaisses*/
-}
-#MenuNavigation li a {
-  /*Couleur du texte*/
-  color: white;
-  /*Taille du texte*/
-  font-size: 200%;
-  /*Suppression du soulignage par défaut*/
-  text-decoration:none;
-}
-
 /*-------------------------*/
+
+/*----Gestion du header----*/
+#En-tête{
+  margin-top: -4px;
+  background-color: rgb(26, 27, 31);
+  border-top: rgba(0, 136, 169, 1) solid 7px;
+  border-bottom: rgba(0, 136, 169, 1) solid 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+#En-tête li, #En-tête a, #En-tête button{
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 500;
+  font-size: 36px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+.LiensMenus{
+  list-style: none;
+}
+.LiensMenus li{
+  display: inline-block;
+  padding: 0px 40px;
+}
+.LiensMenus li a{
+  transition: all 0.3s ease 0s;
+}
+.LiensMenus li a:hover{
+  color: #0088a9;
+}
+.BoutonConnexion button{
+  margin-left: 30px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.BoutonConnexion button:hover{
+  background-color: rgba(0, 136, 169, 0.8);
+}
 
 /*----Gestion de la page d'accueil----*/
 
 #Accueil{
   display: flex;
-  flex-wrap: wrap;
 }
 
 /*Titre*/
 
 #Accueil h1 {
-  padding-left: 25px;
-  font-size: 4em;
+  padding-left: 5%;
+  font-size: 5em;
   font-style: italic;
   text-decoration: underline;
   text-decoration-color: darkslategray;
-  flex-shrink: 0;
 }
 
 /*Synopsis*/
-
-#Accueil section {
-  flex-basis: 50%;
-  width: 30%;
+#Accueil #Synopsis{
+  padding-left: 5%;
+  padding-right: 15%;
+  font-size: 2em;
+  text-align: justify;
 }
 
 /*Infomations complémentaires*/
 
 #Accueil aside {
-  flex-grow: 1;
+  flex-basis: 25%;
+  flex-shrink: 0;
+  font-size: 2em;
+  margin: 3%;
+  padding: 30px;
+  border: #24252A;
+  background-color: rgb(73, 75, 85);
+  box-shadow: inset 50px 0 50px -50px rgb(45, 45, 49);
 }
 
 /*------------------------------------*/
+
+/*----Gestion de la page des saisons----*/
+#Saisons{
+  display: flex;
+  flex-wrap: wrap;
+}
+section{
+  margin: 10px;
+  flex-basis:90%;
+  flex-grow: 1;
+}
+
+/*-------------------------------------*/
 
 /*----Gestion de la page des personnages----*/
 
 /*Gestion du texte de description des personnages*/
 
 #shelby h1 {
-  font-family: 'Fira Sans', sans-serif;
   padding-left: 25px;
   font-size: 4em;
   font-style: italic;
@@ -172,12 +218,10 @@ body {
   text-decoration-color: darkslategray;
 }
 #shelby h2 {
-  font-family: 'Fira Sans', sans-serif;
   padding-left: 25px;
   font-size:2.5em;
 }
 #shelby p {
-  font-family: 'Fira Sans', sans-serif;
   font-size: 2em;
   text-align: justify;
   padding-right: 25px;
@@ -196,6 +240,9 @@ body {
 }
 #shelby figure img{
   width: 100%;
+  border: 10px solid transparent;
+  padding: 1px;
+  border-image: url(../images/border1.png) 30 round;
 }
 
 /*Gestion de la mise en forme des blocs*/
@@ -333,6 +380,99 @@ body {
 #ImageQuizzPerso{
   width: 60%;
 }
+#AllV{
+  margin: 30px;
+}
+/*------------------------------------------*/
+
+/*----Gestion de la page de connexion----*/
+#LoginForm{
+  text-align: center;
+}
+#LoginForm h2{
+  color: #edf0f1;
+  font-weight: 500;
+}
+#LoginForm input[type="text"],#LoginForm input[type="password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(0, 136, 169, 1) ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+#LoginForm input[type="text"]:focus,#LoginForm input[type="password"]:focus{
+  width: 280px;
+  border-color: rgba(0, 136, 169, 0.8);
+}
+#LoginForm input[type="submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(0, 136, 169, 0.8) ;
+  padding: 14px 40px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#LoginForm input[type="submit"]:focus{
+  background: rgba(0, 136, 169, 0.8);
+}
+/*------------------------------------------*/
+
+/*----Gestion de la page d'inscription----*/
+#SigninForm{
+  text-align: center;
+}
+#SigninForm h2{
+  color: #edf0f1;
+  font-weight: 500;
+}
+#SigninForm input[type="text"],#SigninForm input[type="email"],#SigninForm input[type="password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(0, 136, 169, 1) ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+#SigninForm input[type="text"]:focus,#SigninForm input[type="email"]:focus,#SigninForm input[type="password"]:focus{
+  width: 280px;
+  border-color: rgba(0, 136, 169, 0.8);
+}
+#SigninForm input[type="submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(0, 136, 169, 0.8) ;
+  padding: 14px 40px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#SigninForm input[type="submit"]:focus{
+  background: rgba(0, 136, 169, 0.8);
+}
 /*------------------------------------------*/
 /*----Gestion du footer----*/
 
@@ -341,8 +481,10 @@ footer{
   width: 100%;
   border-top: 2px solid white;
   margin-top: 15px;
+  margin-bottom: 0px;
 }
 footer p{
-  padding-left: 10px;
-  padding-bottom: 10px;
+  font-size: 24px;
+  padding-left: 25px;
+  padding-bottom: 25px;
 }
