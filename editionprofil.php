@@ -45,7 +45,7 @@ if((isset($_SESSION['id'])))
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Peaky Blinders | Connexion</title>
+    <title>Peaky Blinders | Edition du profil</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -53,13 +53,32 @@ if((isset($_SESSION['id'])))
     <header id="En-tête">
       <nav id="MenuNavigation">
         <ul class="LiensMenus">
-          <li><a href="SiteFilm_Accueil.html">Accueil</a></li>
-          <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
-          <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
-          <li><a href="SiteFilm_Quizz.html">Quizz</a></li>
+          <li><a href="index.php">Accueil</a></li>
+          <li><a href="saisons.php">Saisons</a></li>
+          <li><a href="personnages.php">Personnages</a></li>
+          <li><a href="quizz.php">Quizz</a></li>
+          <?php
+          if(isset($_SESSION['rang'])){
+            if($_SESSION['rang']=='Administrateur'){
+          ?>
+          <li><a href="espacemembre.php">Espace membre</a></li>
+
+          <?php
+            }
+          }
+          ?>
         </ul>
       </nav>
+      <?php
+      if(isset($_SESSION['id'])){?>
+      <a class = "BoutonProfil" href="profil.php?id=<?php echo $_SESSION['id'];?>"><button>Mon profil</button></a>
+      <?php
+      }
+      else{?>
       <a class = "BoutonConnexion" href="connexion.php"><button>Connexion</button></a>
+      <?php
+      }
+      ?>
     </header>
     <div align='center'>
         <h2>Édition de mon profil</h2>

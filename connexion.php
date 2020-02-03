@@ -6,28 +6,29 @@ $bdd = connect_bd();
 if(isset($_POST['formconnexion']))
 {
     $pseudoconnect=htmlspecialchars($_POST['pseudoconnect']);
-    $mdpconnect=sha1($_POST['mdpconnect']);
+    $mdpconnect=htmlspecialchars($_POST['mdpconnect']);
     if(!empty($pseudoconnect) AND !empty($mdpconnect))
     {
         $requser=$bdd->prepare("SELECT * FROM MEMBRES WHERE pseudo =  ? AND password = ?");
         $requser->execute(array($pseudoconnect,$mdpconnect));
         $userexist=$requser->rowCount();
-        if($userexist ==1)
+        if($userexist == 1)
         {
-            $userinfo=$requser->fetch();
-            $_SESSION['id']=$userinfo['id'];
-            $_SESSION['pseudo']=$userinfo['pseudo'];
-            $_SESSION['mail']=$userinfo['mail'];
-            header("Location: profil.php?id=".$_SESSION["id"]);
+          $userinfo=$requser->fetch();
+          $_SESSION['id']=$userinfo['id'];
+          $_SESSION['pseudo']=$userinfo['pseudo'];
+          $_SESSION['mail']=$userinfo['mail'];
+          $_SESSION['rang']=$userinfo['rang'];
+          header("Location: profil.php?id=".$_SESSION['id']);
         }
         else
         {
-            $message="Mot de passe ou pseudo invalide !";
+            $message = "Mot de passe ou pseudo invalide ! Ce compte n'existe peut-être pas";
         }
     }
     else
     {
-        $message="Tous les champs doivent être renseignés !";
+        $message = "Tous les champs doivent être renseignés !";
     }
 }
 ?>
@@ -42,20 +43,39 @@ if(isset($_POST['formconnexion']))
     <header id="En-tête">
       <nav id="MenuNavigation">
         <ul class="LiensMenus">
-          <li><a href="SiteFilm_Accueil.html">Accueil</a></li>
-          <li><a href="SiteFilm_Saisons.html">Saisons</a></li>
-          <li><a href="SiteFilm_Personnages.html">Personnages</a></li>
-          <li><a href="SiteFilm_Quizz.html">Quizz</a></li>
+          <li><a href="index.php">Accueil</a></li>
+          <li><a href="saisons.php">Saisons</a></li>
+          <li><a href="personnages.php">Personnages</a></li>
+          <li><a href="quizz.php">Quizz</a></li>
+          <?php
+          if(isset($_SESSION['rang'])){
+            if($_SESSION['rang']=='Administrateur'){
+          ?>
+          <li><a href="espacemembre.php">Espace membre</a></li>
+
+          <?php
+            }
+          }
+          ?>
         </ul>
       </nav>
+      <?php
+      if(isset($_SESSION['id'])){?>
+      <a class = "BoutonProfil" href="profil.php?id=<?php echo $_SESSION['id'];?>"><button>Mon profil</button></a>
+      <?php
+      }
+      else{?>
       <a class = "BoutonConnexion" href="connexion.php"><button>Connexion</button></a>
+      <?php
+      }
+      ?>
     </header>
     <div id="LoginForm" align='center'>
         <br/>
-        <h2>CONNEXION</h2>
+        <h2>Connexion</h2>
         <br/>
         <form method="POST" action="">
-          <input type="text" name="pseudoconnect" id="pseudoconnect" placeholder="Pseudo">
+          <input type="text" name="pseudoconnect" id="pseudoconnect" placeholder="Pseudonyme">
           <input type="password" name="mdpconnect" id="mdpconnect" placeholder="Mot de passe">
           <input type="submit" value="Connexion" name="formconnexion">
         </form>

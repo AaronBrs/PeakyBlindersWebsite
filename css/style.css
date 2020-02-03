@@ -8,7 +8,6 @@ Différentes présentations des personnages (description déroulantes)
 ----TO DO LIST----
 
 Ajouter Finn, Linda, Lizzie, Johnny Dogs et plus encore May Alfie Isaiah Jeremiah Curly
-Trouver une police convenable
 Ajouter bordure d'images
 Gestion du footer
 Nav hover bottom border thicker
@@ -24,14 +23,12 @@ Gestion mode nuit avec JS même façon que changement d'image onclick JS
 Gestion de la page des saisons 
   Traduire le résumé des épisodes
   Ajout d'un bouton pour afficher les résumé des saisons
-  Insertion d'un tableau avec contenu au choix (Episodes des saisons + informations)
   Gestion du tableau saison CSS
 Organisation des commentaires CSS (Ajouter Général)
+Mettre en forme la page d'édition de profil
+Ajouter des cookies
 
-Ajouter les sessions et les cookies
-
-BDD Avec au moins 2 tables (Espace Membre) (en relation ou non)
-
+BDD Avec au moins 2 tables (Espace Membre) (Commentaires)
 Consulter
 Ajouter
 Supprimer
@@ -39,10 +36,6 @@ Mettre à jour
 
 ----QUESTIONS----
 
-GENERAL: Insérer une image en tant que background (coulissant)
-GENERAL: Voir pour la bannière complète
-ACCUEIL: Gestion du aside
-PERSONNAGES: Sections sans heading
 PERSONNAGES: Image au centre verticalement quand fenêtré
 SAISONS: Lors d'un dezoom important, tout s'aligne ?
 
@@ -83,48 +76,64 @@ PHP
 */
 
 
-
+/*---------------*/
 /*----A TRIER----*/
+/*---------------*/
+
+/*---------------*/
+/*----Général----*/
+/*---------------*/
+
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap&subset=latin-ext');
 
-body {
+html{
+  scroll-behavior: smooth;
+}
+body{
   font-family: 'Bebas Neue', cursive;
-  font-weight: 500;
   background-color: #24252A;
   color: #edf0f1;
+  letter-spacing: 2px;
   margin: 0;
   padding: 0;
 }
-
-#wallpaper{
-  width: 100%;
+::-webkit-scrollbar{
+  background: #edf0f1;
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  border-radius: 8px;
+  box-shadow: inset 0 0 8px #00000070;
+}
+::-webkit-scrollbar-thumb{
+  background: rgb(0, 136, 169);
+  border-radius: 8px;
 }
 
-/*---------------*/
+/*------------------------------*/
+/*----Gestion de la banniere----*/
+/*------------------------------*/
 
-/*Gestion de la banniere*/
 #banniere {
   width: 100%;
-  padding: 0px;
-  margin: 0px;
 }
+
+/*-------------------------*/
+/*----Gestion du header----*/
 /*-------------------------*/
 
-/*----Gestion du header----*/
 #En-tête{
-  margin-top: -4px;
-  background-color: rgb(26, 27, 31);
-  border-top: rgba(0, 136, 169, 1) solid 7px;
-  border-bottom: rgba(0, 136, 169, 1) solid 7px;
   display: flex;
+  padding: 20px 10%;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  background-color: rgb(26, 27, 31);
+  border-top: rgba(0, 136, 169, 1) solid 5px;
+  border-bottom: rgba(0, 136, 169, 1) solid 5px;
 }
 #En-tête li, #En-tête a, #En-tête button{
   font-family: 'Bebas Neue', cursive;
-  font-weight: 500;
-  font-size: 36px;
+  font-size: 28px;
   color: #edf0f1;
   text-decoration: none;
 }
@@ -133,67 +142,203 @@ body {
 }
 .LiensMenus li{
   display: inline-block;
-  padding: 0px 40px;
+  padding: 0px 50px;
 }
 .LiensMenus li a{
   transition: all 0.3s ease 0s;
 }
-.LiensMenus li a:hover{
-  color: #0088a9;
+#MenuNavigation li a:hover{
+  color:rgba(0, 136, 169, 1);
 }
 .BoutonConnexion button{
+  letter-spacing: 2px;
   margin-left: 30px;
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
   border-radius: 50px;
-  cursor: pointer;
+  border: none;
   transition: all 0.3s ease 0s;
+  background-color: rgba(0, 150, 175, 1);
+  cursor: pointer;
 }
 .BoutonConnexion button:hover{
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: rgba(0, 150, 175, 0.8);
 }
-
+.BoutonProfil button{
+  letter-spacing: 2px;
+  margin-left: 30px;
+  padding: 9px 25px;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(0, 150, 175, 1);
+  cursor: pointer;
+}
+.BoutonProfil button:hover{
+  background-color: rgba(0, 150, 175, 0.8);
+}
+/*------------------------------------*/
 /*----Gestion de la page d'accueil----*/
+/*------------------------------------*/
 
 #Accueil{
   display: flex;
 }
 
-/*Titre*/
+/*Titres*/
 
 #Accueil h1 {
   padding-left: 5%;
-  font-size: 5em;
+  font-size: 36px;
   font-style: italic;
   text-decoration: underline;
-  text-decoration-color: darkslategray;
+  text-decoration-color: rgb(0, 150, 175);
+}
+#Accueil h2{
+  font-size: 24px;
 }
 
 /*Synopsis*/
+
+#Accueil article{
+  flex-basis: 90%;
+}
 #Accueil #Synopsis{
-  padding-left: 5%;
-  padding-right: 15%;
-  font-size: 2em;
+  padding: 0 5%;
+  font-size: 18px;
   text-align: justify;
 }
 
-/*Infomations complémentaires*/
+/*Gestion du Aside*/
 
 #Accueil aside {
-  flex-basis: 25%;
+  text-align: justify;
+  flex-basis: 10%;
   flex-shrink: 0;
-  font-size: 2em;
   margin: 3%;
   padding: 30px;
-  border: #24252A;
   background-color: rgb(73, 75, 85);
-  box-shadow: inset 50px 0 50px -50px rgb(45, 45, 49);
+  font-size: 20px;
+}
+#Accueil aside h2{
+  font-size: 36px;
+  text-align: center;
+  margin: 0px;
+  padding-bottom: 5px;
+  border-bottom: rgb(0, 136, 169) solid 1px;
+}
+.AsideSub header h3{
+  text-align: center;
+  font-size: 24px;
+}
+.AsideSub .CommentArea{
+  border: none;
+  outline: none;
+  background: none;
+  border: solid 1px;
+  padding: 10px 6px;
+  margin-bottom: 10px;
+  min-width: 90%;
+  max-width: 90%;
+  color: #edf0f1;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.AsideSub #BoutonCommentaire{
+  font-size: 20px;
+  margin-top: 10px;
+  background:none;
+  color: rgb(0, 150, 175);
+  font-family: 'Bebas Neue', cursive;
+  border: solid 1px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  transition: linear 0.25s;
+  cursor: pointer;
+}
+.AsideSub #BoutonCommentaire:hover{
+  background-color: rgb(0, 150, 175);
+  color: #edf0f1;
+}
+.LiensRS a{
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  color: #edf0f1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 8px;
+}
+.LiensRS a i{
+  transition: 0.3s ease-in;
+  border: #edf0f1 solid 2px;
+  border-radius: 30%;
+  padding: 10px;
+  margin: 4px;
+}
+.LiensRS a:hover i{
+  color: rgb(0, 150, 175);
+  border-color: rgb(0, 150, 175);
+  transform: scale(2);
+}
+.InfoContact{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+.CarteContact{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  margin: 0 25px;
+  width: 150px;
+  height: 120px;
+  background: rgb(73, 75, 85);
+  border: rgb(0, 136, 169) solid 4px;
+  border-radius: 15%;
+  justify-content: center;
+  align-items: center;
+  color: #edf0f1;
+}
+.IconeContact{
+  font-size: 28px;
+  border: #edf0f1 solid 2px;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 80px !important;
+  transition: linear 0.3s;
 }
 
-/*------------------------------------*/
-
+.CarteContact:hover .IconeContact{
+  color: rgb(0, 150, 175);
+  border: none;
+  transform: scale(1.3);
+}
+.CarteContact p{
+  margin-top: 0px;
+  max-height: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #edf0f1;
+  transition: linear 0.3s;
+}
+.CarteContact:hover p{
+  max-height: 20px;
+  opacity: 1;
+}
+/*--------------------------------------*/
 /*----Gestion de la page des saisons----*/
+/*--------------------------------------*/
+
 #Saisons{
   display: flex;
   flex-wrap: wrap;
@@ -204,9 +349,9 @@ section{
   flex-grow: 1;
 }
 
-/*-------------------------------------*/
-
+/*------------------------------------------*/
 /*----Gestion de la page des personnages----*/
+/*------------------------------------------*/
 
 /*Gestion du texte de description des personnages*/
 
@@ -215,7 +360,7 @@ section{
   font-size: 4em;
   font-style: italic;
   text-decoration: underline;
-  text-decoration-color: darkslategray;
+  text-decoration-color: rgb(0, 150, 175);
 }
 #shelby h2 {
   padding-left: 25px;
@@ -365,8 +510,10 @@ section{
 #graceburgess aside{
   flex-grow: 5;
 }
-/*------------------------------------*/
+/*-----------------------------------*/
 /*----Gestion de la page du quizz----*/
+/*-----------------------------------*/
+
 #ImageQuestion1{
   width: 30%;
   margin-bottom: 10px;
@@ -383,23 +530,24 @@ section{
 #AllV{
   margin: 30px;
 }
-/*------------------------------------------*/
 
+/*---------------------------------------*/
 /*----Gestion de la page de connexion----*/
+/*---------------------------------------*/
+
 #LoginForm{
   text-align: center;
 }
 #LoginForm h2{
   color: #edf0f1;
-  font-weight: 500;
 }
-#LoginForm input[type="text"],#LoginForm input[type="password"]{
+#LoginForm input[type='text'],#LoginForm input[type='password']{
   border: 0;
   background: none;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid rgba(0, 136, 169, 1) ;
+  border: 2px solid rgb(0, 150, 175);
   padding: 14px 10px;
   width: 200px;
   outline: none;
@@ -409,7 +557,7 @@ section{
 }
 #LoginForm input[type="text"]:focus,#LoginForm input[type="password"]:focus{
   width: 280px;
-  border-color: rgba(0, 136, 169, 0.8);
+  border-color: rgb(0, 150, 175);
 }
 #LoginForm input[type="submit"]{
   border: 0;
@@ -417,7 +565,7 @@ section{
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid rgba(0, 136, 169, 0.8) ;
+  border: 2px solid rgb(0, 150, 175);
   padding: 14px 40px;
   outline: none;
   color: #edf0f1;
@@ -425,12 +573,14 @@ section{
   transition: 0.5s;
   cursor: pointer;
 }
-#LoginForm input[type="submit"]:focus{
-  background: rgba(0, 136, 169, 0.8);
+#LoginForm input[type="submit"]:hover{
+  background: rgb(0, 150, 175);
 }
-/*------------------------------------------*/
 
+/*----------------------------------------*/
 /*----Gestion de la page d'inscription----*/
+/*----------------------------------------*/
+
 #SigninForm{
   text-align: center;
 }
@@ -444,7 +594,7 @@ section{
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid rgba(0, 136, 169, 1) ;
+  border: 2px solid rgb(0, 150, 175) ;
   padding: 14px 10px;
   width: 200px;
   outline: none;
@@ -454,7 +604,7 @@ section{
 }
 #SigninForm input[type="text"]:focus,#SigninForm input[type="email"]:focus,#SigninForm input[type="password"]:focus{
   width: 280px;
-  border-color: rgba(0, 136, 169, 0.8);
+  border-color: rgb(0, 150, 175);
 }
 #SigninForm input[type="submit"]{
   border: 0;
@@ -462,7 +612,7 @@ section{
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid rgba(0, 136, 169, 0.8) ;
+  border: 2px solid rgb(0, 150, 175) ;
   padding: 14px 40px;
   outline: none;
   color: #edf0f1;
@@ -470,18 +620,19 @@ section{
   transition: 0.5s;
   cursor: pointer;
 }
-#SigninForm input[type="submit"]:focus{
-  background: rgba(0, 136, 169, 0.8);
+#SigninForm input[type="submit"]:hover{
+  background: rgb(0, 150, 175);
 }
-/*------------------------------------------*/
+
+/*-------------------------*/
 /*----Gestion du footer----*/
+/*-------------------------*/
 
 footer{
-  background-color: darkslategray;
+  background-color: rgb(26, 27, 31);
   width: 100%;
-  border-top: 2px solid white;
+  border-top: 5px solid rgb(0, 150, 175);
   margin-top: 15px;
-  margin-bottom: 0px;
 }
 footer p{
   font-size: 24px;
