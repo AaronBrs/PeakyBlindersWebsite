@@ -142,7 +142,7 @@ body{
 }
 .LiensMenus li{
   display: inline-block;
-  padding: 0px 50px;
+  padding: 0px 20px;
 }
 .LiensMenus li a{
   transition: all 0.3s ease 0s;
@@ -164,7 +164,7 @@ body{
   background-color: rgba(0, 150, 175, 0.8);
 }
 .BoutonProfil button{
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   margin-left: 30px;
   padding: 9px 25px;
   border-radius: 50px;

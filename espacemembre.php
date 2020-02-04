@@ -46,7 +46,74 @@ if(isset($_SESSION['rang'])){
       }
       ?>
     </header>
-
+    <?php
+    $sql="SELECT pseudo,textComm,dateComm FROM MEMBRES M NATURAL JOIN COMMENTAIRES C WHERE C.idMembre=M.id ORDER BY dateComm DESC";
+    $reqaffichagecomm=$bdd->prepare($sql);
+    $reqaffichagecomm->execute();
+    $commentaires=array();
+    while($row = $reqaffichagecomm->fetch())
+      $commentaires[]=$row;
+    ?>
+    <h2>Liste des commentaires</h2>
+    <table border='1'>
+    <thead>
+      <tr>
+        <th>Pseudo</th>
+        <th>Commentaires</th>
+        <th>Date de publication</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($commentaires as $commentaire):
+    ?>
+      <tr>
+        <td><?php echo $commentaire['pseudo'];?></td>
+        <td><?php echo $commentaire['textComm'];?></td>
+        <td><?php echo $commentaire['dateComm'];?></td>
+        <td><a href="">Supprimer</a></td>
+      </tr>
+      
+    <?php
+    endforeach;
+    ?>
+    </tbody>
+    </table>
+    <?php
+    $sql="SELECT pseudo,mail,password,dateInscription FROM MEMBRES ORDER BY dateInscription DESC";
+    $reqaffichagemembres=$bdd->prepare($sql);
+    $reqaffichagemembres->execute();
+    $membres=array();
+    while($row = $reqaffichagemembres->fetch())
+      $membres[]=$row;
+    ?>
+    <h2>Liste des membres inscrits</h2>
+    <table border='1'>
+    <thead>
+      <tr>
+        <th>Pseudo</th>
+        <th>Mail</th>
+        <th>Mot de passe</th>
+        <th>Date d'inscription</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($membres as $membre):
+    ?>
+      <tr>
+        <td><?php echo $membre['pseudo'];?></td>
+        <td><?php echo $membre['mail'];?></td>
+        <td><?php echo $membre['password'];?></td>
+        <td><?php echo $membre['dateInscription'];?></td>
+        <td><a href="">Supprimer</a></td>
+      </tr>
+      
+    <?php
+    endforeach;
+    ?>
+    </tbody>
+    </table>
     <footer>
       <p>
       © 2019 Aaron BROSSEAU
