@@ -10,6 +10,7 @@ $bdd = connect_bd();
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Personnages</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>

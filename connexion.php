@@ -36,6 +36,7 @@ if(isset($_POST['formconnexion']))
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Connexion</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -77,7 +78,7 @@ if(isset($_POST['formconnexion']))
         <form method="POST" action="">
           <input type="text" name="pseudoconnect" id="pseudoconnect" placeholder="Pseudonyme">
           <input type="password" name="mdpconnect" id="mdpconnect" placeholder="Mot de passe">
-          <input type="submit" value="Connexion" name="formconnexion">
+          <input type="submit" name="formconnexion" value="Connexion">
         </form>
         <p>Pas encore inscrit ? <a href="inscription.php">M'inscrire</a></p>
         <?php

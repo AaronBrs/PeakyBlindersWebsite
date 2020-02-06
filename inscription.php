@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("connexionbdd.php");
 $bdd = connect_bd();
 #$bdd = new PDO('mysql:host=127.0.0.1;dbname=peakyblinderswebsite', 'root','');
@@ -9,8 +10,8 @@ if(!empty($_POST["pseudo"]) AND !empty($_POST["mail"]) AND !empty($_POST["mdp"])
     $mdp=htmlspecialchars($_POST["mdp"]);
     if(isset($_POST["forminscription"]))
     {
-      $pseudolength=strlen($pseudo);
-      if($pseudolength <= 20)
+      $taillepseudo=strlen($pseudo);
+      if($taillepseudo <= 20 AND $taillepseudo >= 8)
       {
         if(filter_var($mail,FILTER_VALIDATE_EMAIL))
         {
@@ -45,7 +46,7 @@ if(!empty($_POST["pseudo"]) AND !empty($_POST["mail"]) AND !empty($_POST["mdp"])
       }
       else
       {
-        $message = "Votre pseudo ne doit pas contenir plus de 20 caractères !";
+        $message = "Votre pseudo doit contenir entre 8 et 20 caractères !";
       }
     }    
   else
@@ -58,6 +59,7 @@ if(!empty($_POST["pseudo"]) AND !empty($_POST["mail"]) AND !empty($_POST["mdp"])
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Inscription</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>

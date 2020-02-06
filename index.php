@@ -5,8 +5,7 @@ $bdd = connect_bd();
 #$bdd = new PDO('mysql:host=127.0.0.1;dbname=peakyblinderswebsite', 'root','');
 if(isset($_POST['BoutonCommentaire'])){
   $commentaire=htmlspecialchars($_POST['CommentArea']);
-  $sql='INSERT INTO COMMENTAIRES(textComm, dateComm, idMembre)VALUES (?, NOW(), ?)';
-  $postcomment=$bdd->prepare($sql);
+  $postcomment=$bdd->prepare('INSERT INTO COMMENTAIRES(textComm, dateComm, idMembre)VALUES (?, NOW(), ?)');
   $postcomment->execute(array($commentaire,$_SESSION['id']));
 }
 ?>
@@ -16,6 +15,7 @@ if(isset($_POST['BoutonCommentaire'])){
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Accueil</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   </head>

@@ -8,10 +8,6 @@ Différentes présentations des personnages (description déroulantes)
 ----TO DO LIST----
 
 Ajouter Finn, Linda, Lizzie, Johnny Dogs et plus encore May Alfie Isaiah Jeremiah Curly
-Ajouter bordure d'images
-Gestion du footer
-Nav hover bottom border thicker
-Ajouter systeme de connexion
 Ajouter des classes aux titres à souligner pour mise en forme
 Ajouter Nav pour les personnages
 Ajouter Nav pour les saisons
@@ -24,20 +20,15 @@ Gestion de la page des saisons
   Traduire le résumé des épisodes
   Ajout d'un bouton pour afficher les résumé des saisons
   Gestion du tableau saison CSS
-Organisation des commentaires CSS (Ajouter Général)
-Mettre en forme la page d'édition de profil
 Ajouter des cookies
+Gestion du zoom
 
-BDD Avec au moins 2 tables (Espace Membre) (Commentaires)
-Consulter
-Ajouter
-Supprimer
-Mettre à jour
+URGENT SUPPRESION ET EDITION NE FONCTIONNENT PAS
+Inscription -> redirection profil
 
 ----QUESTIONS----
 
 PERSONNAGES: Image au centre verticalement quand fenêtré
-SAISONS: Lors d'un dezoom important, tout s'aligne ?
 
 ----SOURCES----
 
@@ -61,6 +52,7 @@ https://www.w3schools.com/howto/howto_css_dropdown.asp
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
 
 ----A RENDRE----
+
 HTML + CSS
 QUIZZ Avec JS
 BD Avec PHP
@@ -73,12 +65,14 @@ BROSSEAU_Aaron_ProjetWeb.tar
 HTML CSS
 JS
 PHP
-*/
-
 
 /*---------------*/
 /*----A TRIER----*/
 /*---------------*/
+
+/*
+
+*/
 
 /*---------------*/
 /*----Général----*/
@@ -86,6 +80,18 @@ PHP
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap&subset=latin-ext');
 
+h1{
+  font-size: 36px;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 150, 175);
+}
+h2{
+  font-size: 28px;
+}
+h3{
+  font-size: 22px;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -106,7 +112,7 @@ body{
   box-shadow: inset 0 0 8px #00000070;
 }
 ::-webkit-scrollbar-thumb{
-  background: rgb(0, 136, 169);
+  background: rgb(0, 150, 175);
   border-radius: 8px;
 }
 
@@ -124,12 +130,13 @@ body{
 
 #En-tête{
   display: flex;
-  padding: 20px 10%;
+  flex-wrap: wrap;
+  padding: 2% 8%;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(26, 27, 31);
-  border-top: rgba(0, 136, 169, 1) solid 5px;
-  border-bottom: rgba(0, 136, 169, 1) solid 5px;
+  background-color: rgb(25, 25, 25);
+  border-top: rgb(0, 150, 175) solid 5px;
+  border-bottom: rgb(0, 150, 175) solid 5px;
 }
 #En-tête li, #En-tête a, #En-tête button{
   font-family: 'Bebas Neue', cursive;
@@ -142,7 +149,7 @@ body{
 }
 .LiensMenus li{
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 2vw;
 }
 .LiensMenus li a{
   transition: all 0.3s ease 0s;
@@ -152,26 +159,26 @@ body{
 }
 .BoutonConnexion button{
   letter-spacing: 2px;
-  margin-left: 30px;
+  margin-left: 5%;
   padding: 9px 25px;
-  border-radius: 50px;
   border: none;
-  transition: all 0.3s ease 0s;
+  border-radius: 50px;
   background-color: rgba(0, 150, 175, 1);
   cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 .BoutonConnexion button:hover{
   background-color: rgba(0, 150, 175, 0.8);
 }
 .BoutonProfil button{
-  letter-spacing: 0px;
-  margin-left: 30px;
+  letter-spacing: 2px;
+  margin-left: 5%;
   padding: 9px 25px;
-  border-radius: 50px;
   border: none;
-  transition: all 0.3s ease 0s;
+  border-radius: 50px;
   background-color: rgba(0, 150, 175, 1);
   cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 .BoutonProfil button:hover{
   background-color: rgba(0, 150, 175, 0.8);
@@ -188,47 +195,37 @@ body{
 
 #Accueil h1 {
   padding-left: 5%;
-  font-size: 36px;
-  font-style: italic;
-  text-decoration: underline;
-  text-decoration-color: rgb(0, 150, 175);
-}
-#Accueil h2{
-  font-size: 24px;
 }
 
 /*Synopsis*/
 
-#Accueil article{
-  flex-basis: 90%;
-}
 #Accueil #Synopsis{
-  padding: 0 5%;
-  font-size: 18px;
   text-align: justify;
+  padding:0 5%;
+  font-size: 16px;
 }
 
 /*Gestion du Aside*/
 
 #Accueil aside {
   text-align: justify;
-  flex-basis: 10%;
-  flex-shrink: 0;
-  margin: 3%;
-  padding: 30px;
-  background-color: rgb(73, 75, 85);
-  font-size: 20px;
+  margin: 2%;
+  padding: 2%;
+  min-width: 25%;
+  max-width: 25%;
+  background-color: rgb(75, 75, 75);
+  border: solid 5px rgb(0, 150, 175);
+  border-radius: 50px;
+  font-size: 16px;
 }
 #Accueil aside h2{
-  font-size: 36px;
   text-align: center;
   margin: 0px;
-  padding-bottom: 5px;
-  border-bottom: rgb(0, 136, 169) solid 1px;
+  padding-bottom: 1%;
+  border-bottom: rgb(0, 150, 175) solid 1px;
 }
 .AsideSub header h3{
   text-align: center;
-  font-size: 24px;
 }
 .AsideSub .CommentArea{
   border: none;
@@ -243,6 +240,9 @@ body{
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
   letter-spacing: 2px;
+}
+.AsideSub div p a{
+  color: rgb(0, 150, 175);
 }
 .AsideSub #BoutonCommentaire{
   font-size: 20px;
@@ -265,42 +265,42 @@ body{
   display: inline-flex;
   text-decoration: none;
   font-size: 24px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   color: #edf0f1;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 0 8px;
+  margin: 0 3%;
 }
 .LiensRS a i{
-  transition: 0.3s ease-in;
   border: #edf0f1 solid 2px;
   border-radius: 30%;
-  padding: 10px;
-  margin: 4px;
+  padding: 15%;
+  margin: 2%;
+  transition: 0.3s ease-in;
 }
 .LiensRS a:hover i{
   color: rgb(0, 150, 175);
   border-color: rgb(0, 150, 175);
-  transform: scale(2);
+  transform: scale(1.5);
 }
 .InfoContact{
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 3%;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 5%;
 }
 .CarteContact{
   display: flex;
   flex-direction: column;
   padding: 0 5px;
-  margin: 0 25px;
+  margin: 2%;
   width: 150px;
   height: 120px;
-  background: rgb(73, 75, 85);
-  border: rgb(0, 136, 169) solid 4px;
+  border: rgb(0, 150, 175) solid 5px;
   border-radius: 15%;
   justify-content: center;
   align-items: center;
@@ -320,7 +320,7 @@ body{
 .CarteContact:hover .IconeContact{
   color: rgb(0, 150, 175);
   border: none;
-  transform: scale(1.3);
+  transform: scale(1.5);
 }
 .CarteContact p{
   margin-top: 0px;
@@ -329,12 +329,13 @@ body{
   letter-spacing: 1px;
   font-size: 12px;
   color: #edf0f1;
-  transition: linear 0.3s;
+  transition: ease-in 0.3s;
 }
 .CarteContact:hover p{
   max-height: 20px;
   opacity: 1;
 }
+
 /*--------------------------------------*/
 /*----Gestion de la page des saisons----*/
 /*--------------------------------------*/
@@ -342,13 +343,43 @@ body{
 #Saisons{
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
 }
-section{
+#Saisons section{
   margin: 10px;
   flex-basis:90%;
   flex-grow: 1;
 }
+#Saisons h1{
+  padding-left: 5%;
+}
+.tabSaison{
+  border-collapse: collapse;
+  margin: 3%;
+}
+.tabSaison td{
+  text-align: justify;
+}
+.tabSaison td, .tabSaison th{
+  padding: 8px;
+}
 
+.tabSaison tr:nth-child(even){
+  background-color: rgb(75, 75, 75);
+}
+
+.tabSaison tr:hover{
+  background-color: rgb(0, 150, 175);
+}
+
+.tabSaison th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(0, 150, 175);
+  color: #edf0f1;
+}
 /*------------------------------------------*/
 /*----Gestion de la page des personnages----*/
 /*------------------------------------------*/
@@ -357,14 +388,12 @@ section{
 
 #shelby h1 {
   padding-left: 25px;
-  font-size: 4em;
   font-style: italic;
   text-decoration: underline;
   text-decoration-color: rgb(0, 150, 175);
 }
 #shelby h2 {
   padding-left: 25px;
-  font-size:2.5em;
 }
 #shelby p {
   font-size: 2em;
@@ -531,6 +560,36 @@ section{
   margin: 30px;
 }
 
+/*----------------------------------------*/
+/*----Gestion de la page espace membre----*/
+/*----------------------------------------*/
+
+.listeBDD {
+  border-collapse: collapse;
+  margin: 3%;
+}
+
+.listeBDD td, .listeBDD th {
+  padding: 8px;
+}
+
+.listeBDD tr:nth-child(even){
+  background-color: rgb(75, 75, 75);
+}
+
+.listeBDD tr:hover{
+  background-color: rgb(0, 150, 175);
+}
+
+.listeBDD th {
+  border: 3px solid rgb(0,75,150);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(0, 150, 175);
+  color: #edf0f1;
+}
+
 /*---------------------------------------*/
 /*----Gestion de la page de connexion----*/
 /*---------------------------------------*/
@@ -624,13 +683,57 @@ section{
   background: rgb(0, 150, 175);
 }
 
+/*----------------------------------------------*/
+/*----Gestion de la page d'édition de profil----*/
+/*----------------------------------------------*/
+
+#ModifProfilForm{
+  text-align: center;
+}
+#ModifProfilForm h2{
+  color: #edf0f1;
+}
+#ModifProfilForm input[type="text"],#ModifProfilForm input[type="email"],#ModifProfilForm input[type="password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(0, 150, 175) ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+#ModifProfilForm input[type="text"]:focus,#ModifProfilForm input[type="email"]:focus,#ModifProfilForm input[type="password"]:focus{
+  width: 280px;
+  border-color: rgb(0, 150, 175);
+}
+#ModifProfilForm input[type="submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(0, 150, 175) ;
+  padding: 14px 40px;
+  outline: none;
+  color: #edf0f1;
+  border-radius: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#ModifProfilForm input[type="submit"]:hover{
+  background: rgb(0, 150, 175);
+}
 /*-------------------------*/
 /*----Gestion du footer----*/
 /*-------------------------*/
 
 footer{
-  background-color: rgb(26, 27, 31);
-  width: 100%;
+  background-color: rgb(25, 25, 25);
   border-top: 5px solid rgb(0, 150, 175);
   margin-top: 15px;
 }

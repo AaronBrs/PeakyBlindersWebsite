@@ -11,7 +11,8 @@ if(isset($_SESSION['rang'])){
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Peaky Blinders | Mon profil</title>
+    <title>Peaky Blinders | Espace membre</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -47,15 +48,15 @@ if(isset($_SESSION['rang'])){
       ?>
     </header>
     <?php
-    $sql="SELECT pseudo,textComm,dateComm FROM MEMBRES M NATURAL JOIN COMMENTAIRES C WHERE C.idMembre=M.id ORDER BY dateComm DESC";
-    $reqaffichagecomm=$bdd->prepare($sql);
+    $reqaffichagecomm=$bdd->prepare("SELECT pseudo,textComm,dateComm FROM MEMBRES M NATURAL JOIN COMMENTAIRES C WHERE C.idMembre=M.id ORDER BY dateComm DESC");
     $reqaffichagecomm->execute();
     $commentaires=array();
     while($row = $reqaffichagecomm->fetch())
       $commentaires[]=$row;
     ?>
+    <div align="center">
     <h2>Liste des commentaires</h2>
-    <table border='1'>
+    <table class = "listeBDD">
     <thead>
       <tr>
         <th>Pseudo</th>
@@ -66,12 +67,11 @@ if(isset($_SESSION['rang'])){
     <tbody>
     <?php
     foreach($commentaires as $commentaire):
-    ?>
+      ?>
       <tr>
         <td><?php echo $commentaire['pseudo'];?></td>
         <td><?php echo $commentaire['textComm'];?></td>
         <td><?php echo $commentaire['dateComm'];?></td>
-        <td><a href="">Supprimer</a></td>
       </tr>
       
     <?php
@@ -80,15 +80,14 @@ if(isset($_SESSION['rang'])){
     </tbody>
     </table>
     <?php
-    $sql="SELECT pseudo,mail,password,dateInscription FROM MEMBRES ORDER BY dateInscription DESC";
-    $reqaffichagemembres=$bdd->prepare($sql);
+    $reqaffichagemembres=$bdd->prepare("SELECT id,pseudo,mail,password,dateInscription FROM MEMBRES ORDER BY dateInscription DESC");
     $reqaffichagemembres->execute();
     $membres=array();
     while($row = $reqaffichagemembres->fetch())
-      $membres[]=$row;
+    $membres[]=$row;
     ?>
     <h2>Liste des membres inscrits</h2>
-    <table border='1'>
+    <table class = "listeBDD">
     <thead>
       <tr>
         <th>Pseudo</th>
@@ -100,13 +99,13 @@ if(isset($_SESSION['rang'])){
     <tbody>
     <?php
     foreach($membres as $membre):
-    ?>
+      ?>
       <tr>
         <td><?php echo $membre['pseudo'];?></td>
         <td><?php echo $membre['mail'];?></td>
         <td><?php echo $membre['password'];?></td>
         <td><?php echo $membre['dateInscription'];?></td>
-        <td><a href="">Supprimer</a></td>
+        <td><a href="profil.php<?php echo '?id='.$membre['id'];?>">Voir profil</a></td>
       </tr>
       
     <?php
@@ -114,6 +113,7 @@ if(isset($_SESSION['rang'])){
     ?>
     </tbody>
     </table>
+    </div>
     <footer>
       <p>
       © 2019 Aaron BROSSEAU

@@ -10,6 +10,7 @@ $bdd = connect_bd();
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Quizz</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quizz.css">
     <script src='js/script.js'></script>

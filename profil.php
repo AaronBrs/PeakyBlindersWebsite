@@ -14,6 +14,7 @@ if((isset($_GET['id'])) AND ($_GET['id']>0))
   <head>
     <meta charset="utf-8">
     <title>Peaky Blinders | Mon profil</title>
+    <link rel="icon" href="images/icone.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -49,13 +50,15 @@ if((isset($_GET['id'])) AND ($_GET['id']>0))
       ?>
     </header>
     <div align='center'>
-        <h2>Profil de <?php echo $userinfo['pseudo'];?></h2>
+        <h1>Profil de <?php echo $userinfo['pseudo'];?></h1>
         <br/><br/>
+        Rang : <?php echo $userinfo['rang'];?><br/>
         Pseudo : <?php echo $userinfo['pseudo'];?><br/>
         Mail : <?php echo $userinfo['mail'];?><br/>
+        N°Identification : <?php echo $userinfo['id'];?><br/>
         Avis sur la série : 
         <?php 
-        $sql = "SELECT textComm FROM COMMENTAIRES WHERE idMembre= ?";
+        $sql = "SELECT textComm FROM COMMENTAIRES WHERE idMembre= ? ORDER BY dateComm DESC";
         $reqcommentaire=$bdd->prepare($sql);
         $reqcommentaire->execute(array($userinfo['id']));
         $commentaire=$reqcommentaire->fetch();
@@ -68,7 +71,13 @@ if((isset($_GET['id'])) AND ($_GET['id']>0))
         ?>
             <a href="editionprofil.php">Editer mon profil</a>
             <a href="deconnexion.php">Se déconnecter</a>
-            <a href="">Supprimer mon compte</a>
+            <?php
+            if($userinfo['rang']=='Membre'){
+            ?>
+            <a href="suppressionprofil.php">Supprimer mon compte</a>
+            <?php
+            }
+            ?>
         <?php
         }
         ?>
@@ -83,5 +92,9 @@ if((isset($_GET['id'])) AND ($_GET['id']>0))
   </body>
 </html>
 <?php
+}
+else
+{
+  header('Location: index.php');
 }
 ?>
