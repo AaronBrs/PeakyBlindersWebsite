@@ -12,7 +12,7 @@ if((isset($_SESSION['id'])))
     {
         $nouveaupseudo = htmlspecialchars($_POST['nouveaupseudo']);
         $taillenouveaupseudo=strlen($nouveaupseudo);
-        if($taillepseudo <= 20 AND $taillenouveaupseudo >= 8)
+        if($taillenouveaupseudo <= 20 AND $taillenouveaupseudo >= 8)
         {
           $requsername=$bdd->prepare("SELECT * FROM MEMBRES WHERE pseudo = ? ");
           $requsername->execute(array($nouveaupseudo));
@@ -36,10 +36,10 @@ if((isset($_SESSION['id'])))
     if(isset($_POST['nouveaumail']) AND !empty($_POST['nouveaumail']) AND $_POST['nouveaumail'] != $user['mail'])
     {
       $nouveaumail = htmlspecialchars($_POST['nouveaumail']);
-      if(filter_var($mail,FILTER_VALIDATE_EMAIL))
+      if(filter_var($nouveaumail,FILTER_VALIDATE_EMAIL))
         {
         $reqmail=$bdd->prepare("SELECT * FROM MEMBRES WHERE mail = ? ");
-        $reqmail->execute(array($mail));
+        $reqmail->execute(array($nouveaumail));
         $mailexist= $reqmail->rowCount();
         if ($mailexist==0)
         {
@@ -59,23 +59,23 @@ if((isset($_SESSION['id'])))
     }
     if(isset($_POST['nouveaumdp1']) AND !empty($_POST['nouveaumdp1']) AND isset($_POST['nouveaumdp2']) AND !empty($_POST['nouveaumdp2']) )
     {
-        $mdp1= htmlspecialchars($_POST['nouveaumdp1']);
-        $mdp2= htmlspecialchars($_POST['nouveaumdp2']);
+        $mdp1= sha1($_POST['nouveaumdp1']);
+        $mdp2= sha1($_POST['nouveaumdp2']);
         if($mdp1 == $mdp2)
         {
-            $majmdp = $bdd -> prepare("UPDATE MEMBRES SET password = ? WHERE id = ?");
-            $majmdp->execute(array($mdp1,$_SESSION['id']));
-            header("Location: profil.php?id=".$_SESSION['id']);
+          $majmdp = $bdd -> prepare("UPDATE MEMBRES SET password = ? WHERE id = ?");
+          $majmdp->execute(array($mdp1,$_SESSION['id']));
+          header("Location: profil.php?id=".$_SESSION['id']);
         }
         else
         {
-            $message = "Vos deux mots de passe doivent être identiques !";
+          $message = "Vos deux mots de passe doivent être identiques !";
         }
-    }
-    if(isset($_POST['nouveaupseudo']) AND $_POST['nouveaupseudo']==$user['pseudo'])
-    {
-        header("Location: profil.php?id=".$_SESSION['id']);
-    }
+      }
+      if(isset($_POST['nouveaupseudo']) AND $_POST['nouveaupseudo']==$user['pseudo'] AND !isset($message))
+      {
+          header("Location: profil.php?id=".$_SESSION['id']);
+      }
 ?>
 <html lang="fr">
   <head>
@@ -125,13 +125,17 @@ if((isset($_SESSION['id'])))
           <input type="email" name="nouveaumail" id="nouveaumail" placeholder="Nouveau mail" value="<?php echo $user['mail'];?>">
           <input type="password" name="nouveaumdp1" id="nouveaumdp1" placeholder="Nouveau mot de passe">
           <input type="password" name="nouveaumdp2" id="nouveaumdp2" placeholder="Confirmation nouveau mot de passe">
+
           <input type="submit" name='formedition' value="Mettre à jour les informations du profil">
         </form>
-        <?php
+    <p>
+    <?php
     if(isset($message)){
       echo "<font color='red'>".$message."</font>";
     }
+
     ?>
+    </p>
     </div>
     <footer>
       <p>

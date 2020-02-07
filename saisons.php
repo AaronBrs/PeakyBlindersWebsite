@@ -53,41 +53,41 @@ $bdd = connect_bd();
         <table class="tabSaison">
           <thead>
               <tr>
-                <th> N°Episode </th>
-                <th class="Case titre"> Titre </th>
-                <th> Résumé </th>
+                <th class='CaseEpisode'> N°Episode </th>
+                <th class='CaseTitre'> Titre </th>
+                <th class='CaseRésumé'> Résumé </th>
               </tr>
           </thead>
           <tbody>
             <tr>
-              <td> Episode 1 </td>
-              <td> Episode 1.1 </td>
-              <td> Birmingham, 1919. Thomas Shelby controls the Peaky Blinders, one of the city's most feared criminal organizations, but his ambitions go beyond running the streets. When a crate of guns goes missing, Thomas recognizes an opportunity to move up in the world. </td>
+              <td class='NumEpisode'> Episode 1 </td>
+              <td class='TitreEpisode'> Episode 1.1 </td>
+              <td class='RésuméEpisode'> Birmingham, 1919. Thomas Shelby controls the Peaky Blinders, one of the city's most feared criminal organizations, but his ambitions go beyond running the streets. When a crate of guns goes missing, Thomas recognizes an opportunity to move up in the world. </td>
             </tr>
             <tr>
-              <td> Episode 2 </td>
-              <td> Episode 1.2 </td>
-              <td> Thomas fixes a horse race, provoking the ire of local kingpin Billy Kimber. He also start a war with gypsy family the Lees. Meanwhile, Inspector Campbell carries out a vicious raid of Small Heath in search of the stolen guns. </td>
+              <td class='NumEpisode'> Episode 2 </td>
+              <td class='TitreEpisode'> Episode 1.2 </td>
+              <td class='RésuméEpisode'> Thomas fixes a horse race, provoking the ire of local kingpin Billy Kimber. He also start a war with gypsy family the Lees. Meanwhile, Inspector Campbell carries out a vicious raid of Small Heath in search of the stolen guns. </td>
             </tr>
             <tr>
-              <td> Episode 3 </td>
-              <td> Episode 1.3 </td>
-              <td> Thomas plans to go to Cheltenham races in order to get closer to Billy Kimber. Knowing the gangster's appetite for beautiful women, Thomas invites Grace to accompany him. Meanwhile, some IRA sympathisers approach Thomas with an offer to buy the stolen guns. </td>
+              <td class='NumEpisode'> Episode 3 </td>
+              <td class='TitreEpisode'> Episode 1.3 </td>
+              <td class='RésuméEpisode'> Thomas plans to go to Cheltenham races in order to get closer to Billy Kimber. Knowing the gangster's appetite for beautiful women, Thomas invites Grace to accompany him. Meanwhile, some IRA sympathisers approach Thomas with an offer to buy the stolen guns. </td>
             </tr>
             <tr>
-              <td> Episode 4 </td>
-              <td> Episode 1.4 </td>
-              <td> Thomas Shelby's war with the Lee family of gypsies escalates and Campbell puts further pressure on him to deliver the stolen guns. Meanwhile, John Shelby plans to marry a former prostitute, but Thomas suspects that she's still on the game. </td>
+              <td class='NumEpisode'> Episode 4 </td>
+              <td class='TitreEpisode'> Episode 1.4 </td>
+              <td class='RésuméEpisode'> Thomas Shelby's war with the Lee family of gypsies escalates and Campbell puts further pressure on him to deliver the stolen guns. Meanwhile, John Shelby plans to marry a former prostitute, but Thomas suspects that she's still on the game. </td>
             </tr>
             <tr>
-              <td> Episode 5 </td>
-              <td> Episode 1.5 </td>
-              <td> Thomas has to deal with an IRA chief who has come to Small Heath to avenge his cousin's death. Meanwhile, Campbell gets closer to the stolen guns, and Grace has to decide whether her loyalties lie with him or with Thomas. </td>
+              <td class='NumEpisode'> Episode 5 </td>
+              <td class='TitreEpisode'> Episode 1.5 </td>
+              <td class='RésuméEpisode'> Thomas has to deal with an IRA chief who has come to Small Heath to avenge his cousin's death. Meanwhile, Campbell gets closer to the stolen guns, and Grace has to decide whether her loyalties lie with him or with Thomas. </td>
             </tr>
             <tr>
-              <td> Episode 6 </td>
-              <td> Episode 1.6 </td>
-              <td> As Thomas prepares to oust Billy Kimber, hidden secrets are revealed and the family have to face up to the problems that have divided them. Meanwhile, Campbell, obsessed with taking down the Peaky Blinders, unleashed one last plan to destroy them. </td>
+              <td class='NumEpisode'> Episode 6 </td>
+              <td class='TitreEpisode'> Episode 1.6 </td>
+              <td class='RésuméEpisode'> As Thomas prepares to oust Billy Kimber, hidden secrets are revealed and the family have to face up to the problems that have divided them. Meanwhile, Campbell, obsessed with taking down the Peaky Blinders, unleashed one last plan to destroy them. </td>
             </tr>
           </tbody>
         </table>
@@ -98,41 +98,41 @@ $bdd = connect_bd();
         <table class='tabSaison'>
           <thead>
             <tr>
-              <th> N°Episode </th>
-              <th> Titre </th>
-              <th> Résumé </th>
+              <th class='CaseEpisode'> N°Episode </th>
+              <th class='CaseTitre'> Titre </th>
+              <th class='CaseRésumé'> Résumé </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td> Episode 1 </td>
-              <td> Episode 2.1 </td>
-              <td> Peaky Blinders picks up two years later, in 1921. Thomas reveals to his family that he plans to expand their successful business to London. Polly tries to find out what happened to her children, while Thomas, Arthur and John visit a jazz club run by Darby Sabini. </td>
+              <td class='NumEpisode'> Episode 1 </td>
+              <td class='TitreEpisode'> Episode 2.1 </td>
+              <td class='RésuméEpisode'> Peaky Blinders picks up two years later, in 1921. Thomas reveals to his family that he plans to expand their successful business to London. Polly tries to find out what happened to her children, while Thomas, Arthur and John visit a jazz club run by Darby Sabini. </td>
             </tr>
             <tr>
-              <td> Episode 2 </td>
-              <td> Episode 2.2 </td>
-              <td> Ada is rescued from Sabini’s men by Peaky Blinders members, while Thomas is in the hospital recovering. He discharges himself from the hospital and heads to Camden Town to meet Alfie Solomons. Arthur Shelby Jr. accidentally beats an opponent to death in a boxing ring, and Thomas receives a letter from Grace. </td>
+              <td class='NumEpisode'> Episode 2 </td>
+              <td class='TitreEpisode'> Episode 2.2 </td>
+              <td class='RésuméEpisode'> Ada is rescued from Sabini’s men by Peaky Blinders members, while Thomas is in the hospital recovering. He discharges himself from the hospital and heads to Camden Town to meet Alfie Solomons. Arthur Shelby Jr. accidentally beats an opponent to death in a boxing ring, and Thomas receives a letter from Grace. </td>
             </tr>
             <tr>
-              <td> Episode 3 </td>
-              <td> Episode 2.3 </td>
-              <td> Whilst Irish gangs fight each other in Birmingham, Arthur is threatened by the mother of the boy he killed in the boxing match and who is not appeased by promises of money. </td>
+              <td class='NumEpisode'> Episode 3 </td>
+              <td class='TitreEpisode'> Episode 2.3 </td>
+              <td class='RésuméEpisode'> Whilst Irish gangs fight each other in Birmingham, Arthur is threatened by the mother of the boy he killed in the boxing match and who is not appeased by promises of money. </td>
             </tr>
             <tr>
-              <td> Episode 4 </td>
-              <td> Episode 2.4 </td>
-              <td> Arthur spearheads a ferocious takeover of London's Eden Club, meanwhile Thomas and his new horse trainer become better acquainted. </td>
+              <td class='NumEpisode'> Episode 4 </td>
+              <td class='TitreEpisode'> Episode 2.4 </td>
+              <td class='RésuméEpisode'> Arthur spearheads a ferocious takeover of London's Eden Club, meanwhile Thomas and his new horse trainer become better acquainted. </td>
             </tr>
             <tr>
-              <td> Episode 5 </td>
-              <td> Episode 2.5 </td>
-              <td> Tommy's powerbase in London has been obliterated. </td>
+              <td class='NumEpisode'> Episode 5 </td>
+              <td class='TitreEpisode'> Episode 2.5 </td>
+              <td class='RésuméEpisode'> Tommy's powerbase in London has been obliterated. </td>
             </tr>
             <tr>
-              <td> Episode 6 </td>
-              <td> Episode 2.6 </td>
-              <td> As Derby day arrives, Tommy is faced with impossible decisions as he prepares to strike back at his enemies and take the family business to the next level. </td>
+              <td class='NumEpisode'> Episode 6 </td>
+              <td class='TitreEpisode'> Episode 2.6 </td>
+              <td class='RésuméEpisode'> As Derby day arrives, Tommy is faced with impossible decisions as he prepares to strike back at his enemies and take the family business to the next level. </td>
             </tr>
           </tbody>
         </table>
@@ -143,41 +143,41 @@ $bdd = connect_bd();
         <table class='tabSaison'>
           <thead>
             <tr>
-              <th> N°Episode </th>
-              <th> Titre </th>
-              <th> Résumé </th>
+              <th class='CaseEpisode'> N°Episode </th>
+              <th class='CaseTitre'> Titre </th>
+              <th class='CaseRésumé'> Résumé </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td> Episode 1 </td>
-              <td> Episode 3.1 </td>
-              <td> It is Thomas Shelby's long-awaited wedding day. A mysterious visitor imperils the entire Shelby family, and Tommy finds himself pulled into a web of intrigue more lethal than anything he has yet encountered. </td>
+              <td class='NumEpisode'> Episode 1 </td>
+              <td class='TitreEpisode'> Episode 3.1 </td>
+              <td class='RésuméEpisode'> It is Thomas Shelby's long-awaited wedding day. A mysterious visitor imperils the entire Shelby family, and Tommy finds himself pulled into a web of intrigue more lethal than anything he has yet encountered. </td>
             </tr>
             <tr>
-              <td> Episode 2 </td>
-              <td> Episode 3.2 </td>
-              <td> Tommy discovers the extent of the mission given to him and the extreme lengths his new paymasters are willing to go to in their quest for power. Meanwhile his own family's activities lead to escalating danger in Washington. </td>
+              <td class='NumEpisode'> Episode 2 </td>
+              <td class='TitreEpisode'> Episode 3.2 </td>
+              <td class='RésuméEpisode'> Tommy discovers the extent of the mission given to him and the extreme lengths his new paymasters are willing to go to in their quest for power. Meanwhile his own family's activities lead to escalating danger in Washington. </td>
             </tr>
             <tr>
-              <td> Episode 3 </td>
-              <td> Episode 3.3 </td>
-              <td> Thomas travels to Wales seeking absolution, and uncovers a traitor in the Economic League. Michael develops a taste for guns. Arthur gets good news. </td>
+              <td class='NumEpisode'> Episode 3 </td>
+              <td class='TitreEpisode'> Episode 3.3 </td>
+              <td class='RésuméEpisode'> Thomas travels to Wales seeking absolution, and uncovers a traitor in the Economic League. Michael develops a taste for guns. Arthur gets good news. </td>
             </tr>
             <tr>
-              <td> Episode 4 </td>
-              <td> Episode 3.4 </td>
-              <td> Polly goes to confession, igniting a chain of events that reveals a trap being laid at the Shelbys' expense. Thomas plans an exit from dirty business. </td>
+              <td class='NumEpisode'> Episode 4 </td>
+              <td class='TitreEpisode'> Episode 3.4 </td>
+              <td class='RésuméEpisode'> Polly goes to confession, igniting a chain of events that reveals a trap being laid at the Shelbys' expense. Thomas plans an exit from dirty business. </td>
             </tr>
             <tr>
-              <td> Episode 5 </td>
-              <td> Episode 3.5 </td>
-              <td>As the Russians test the Peaky Blinders, Tommy realises that he is seriously outmanoeuvred. But he has an ace up his sleeve. </td>
+              <td class='NumEpisode'> Episode 5 </td>
+              <td class='TitreEpisode'> Episode 3.5 </td>
+              <td class='RésuméEpisode'>As the Russians test the Peaky Blinders, Tommy realises that he is seriously outmanoeuvred. But he has an ace up his sleeve. </td>
             </tr>
             <tr>
-              <td> Episode 6 </td>
-              <td> Episode 3.6 </td>
-              <td> As Tommy prepares to commit the most audacious crime of his career, an unexpected blow forces him to face his worst fears in a race against time. </td>
+              <td class='NumEpisode'> Episode 6 </td>
+              <td class='TitreEpisode'> Episode 3.6 </td>
+              <td class='RésuméEpisode'> As Tommy prepares to commit the most audacious crime of his career, an unexpected blow forces him to face his worst fears in a race against time. </td>
             </tr>
           </tbody>
         </table>
@@ -188,44 +188,43 @@ $bdd = connect_bd();
         <table class='tabSaison'>
           <thead>
             <tr>
-              <th> N°Episode </th>
-              <th> Titre </th>
-              <th> Résumé </th>
+              <th class='CaseEpisode'> N°Episode </th>
+              <th class='CaseTitre'> Titre </th>
+              <th class='CaseRésumé'> Résumé </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td> Episode 1 </td>
-              <td> The Noose </td>
-              <td> It is Christmas and Tommy Shelby receives a letter that makes him realize that he and every member of the family are in danger. He knows that it is time for the family to bury their differences and face the enemy together. </td>
+              <td class='NumEpisode'> Episode 1 </td>
+              <td class='TitreEpisode'> The Noose </td>
+              <td class='RésuméEpisode'> It is Christmas and Tommy Shelby receives a letter that makes him realize that he and every member of the family are in danger. He knows that it is time for the family to bury their differences and face the enemy together. </td>
             </tr>
             <tr>
-              <td> Episode 2 </td>
-              <td> Heathens </td>
-              <td> As the Shelbys come to terms with shocking events, Tommy makes a decision he may come to regret. Meanwhile, a bold new enemy makes his move. </td>
-              </tr>
-              <tr>
-                <td> Episode 3 </td>
-                <td> Blackbird </td>
-                <td> Luca Changretta understands the complexity of his enemy, as the weight of gypsy tradition hangs upon Arthur. But could there be a traitor within the Peaky Blinders' midst? </td>
-              </tr>
-              <tr>
-                <td> Episode 4 </td>
-                <td> Dangerous </td>
-                <td> In a daring cat and mouse chase, will Tommy be outwitted by his enemies? And with the return of an old friend, Tommy tries to distract himself with other pursuits. </td>
-              </tr>
-              <tr>
-                <td> Episode 5 </td>
-                <td> The Duel </td>
-                <td> Tommy prepares himself as the bloody battle lines are drawn between the Peaky Blinders and Changretta. A deal is struck - with potentially devastating consequences. </td>
-              </tr>
-              <tr>
-                <td> Episode 6 </td>
-                <td> The Company </td>
-                <td> It is the night of the big fight - Bonnie Gold versus Goliath. But as the bell rings and the crowd goes wild, dangers lurk in the shadows for Thomas Shelby and his family. When Luca Changretta plays his final ace, he sets in motion a series of events that will change the Peaky Blinders forever. </td>
-              </tr>
-            </tbody>
-          </table>
+              <td class='NumEpisode'> Episode 2 </td>
+              <td class='TitreEpisode'> Heathens </td>
+              <td class='RésuméEpisode'> As the Shelbys come to terms with shocking events, Tommy makes a decision he may come to regret. Meanwhile, a bold new enemy makes his move. </td>
+            </tr>
+            <tr>
+              <td class='NumEpisode'> Episode 3 </td>
+              <td class='TitreEpisode'> Blackbird </td>
+              <td class='RésuméEpisode'> Luca Changretta understands the complexity of his enemy, as the weight of gypsy tradition hangs upon Arthur. But could there be a traitor within the Peaky Blinders' midst? </td>
+            </tr>
+            <tr>
+              <td class='NumEpisode'> Episode 4 </td>
+              <td class='TitreEpisode'> Dangerous </td>
+              <td class='RésuméEpisode'> In a daring cat and mouse chase, will Tommy be outwitted by his enemies? And with the return of an old friend, Tommy tries to distract himself with other pursuits. </td>              </tr>
+            <tr>
+              <td class='NumEpisode'> Episode 5 </td>
+              <td class='TitreEpisode'> The Duel </td>
+              <td class='RésuméEpisode'> Tommy prepares himself as the bloody battle lines are drawn between the Peaky Blinders and Changretta. A deal is struck - with potentially devastating consequences. </td>
+            </tr>
+            <tr>
+              <td class='NumEpisode'> Episode 6 </td>
+              <td class='TitreEpisode'> The Company </td>
+              <td class='RésuméEpisode'> It is the night of the big fight - Bonnie Gold versus Goliath. But as the bell rings and the crowd goes wild, dangers lurk in the shadows for Thomas Shelby and his family. When Luca Changretta plays his final ace, he sets in motion a series of events that will change the Peaky Blinders forever. </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </article>
     <footer>

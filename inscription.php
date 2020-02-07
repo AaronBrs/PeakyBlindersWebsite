@@ -7,7 +7,7 @@ if(!empty($_POST["pseudo"]) AND !empty($_POST["mail"]) AND !empty($_POST["mdp"])
 {
     $pseudo=htmlspecialchars($_POST["pseudo"]);
     $mail=htmlspecialchars($_POST["mail"]);
-    $mdp=htmlspecialchars($_POST["mdp"]);
+    $mdp=sha1($_POST["mdp"]);
     if(isset($_POST["forminscription"]))
     {
       $taillepseudo=strlen($pseudo);

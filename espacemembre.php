@@ -54,8 +54,8 @@ if(isset($_SESSION['rang'])){
     while($row = $reqaffichagecomm->fetch())
       $commentaires[]=$row;
     ?>
-    <div align="center">
-    <h2>Liste des commentaires</h2>
+    <section>
+    <h1>Liste des commentaires</h1>
     <table class = "listeBDD">
     <thead>
       <tr>
@@ -83,10 +83,11 @@ if(isset($_SESSION['rang'])){
     $reqaffichagemembres=$bdd->prepare("SELECT id,pseudo,mail,password,dateInscription FROM MEMBRES ORDER BY dateInscription DESC");
     $reqaffichagemembres->execute();
     $membres=array();
-    while($row = $reqaffichagemembres->fetch())
-    $membres[]=$row;
+    while($row = $reqaffichagemembres->fetch()){
+      $membres[]=$row;
+    }
     ?>
-    <h2>Liste des membres inscrits</h2>
+    <h1>Liste des membres inscrits</h1>
     <table class = "listeBDD">
     <thead>
       <tr>
@@ -113,7 +114,7 @@ if(isset($_SESSION['rang'])){
     ?>
     </tbody>
     </table>
-    </div>
+  </section>
     <footer>
       <p>
       © 2019 Aaron BROSSEAU

@@ -1,6 +1,7 @@
 
 let listePersonnages = new Array('Grace Burgess','Polly Gray','Arthur Shelby','Michael Gray','John Shelby');
 let indicePersonnages = new Array(1,3,0,2,4);
+const ensembleReponse1 = new Set(["Thomas shelby","thomas Shelby", "Thomas Shelby","THOMAS SHELBY","thomas shelby"]);
 
 function FormValidation(){
     VerifQuestion1();
@@ -9,9 +10,6 @@ function FormValidation(){
     VerifQuestion4();
 
 }
-function SwitchPic(){
-}
-const ensembleReponse1 = new Set(["Thomas shelby","thomas Shelby", "Thomas Shelby","THOMAS SHELBY","thomas shelby"]);
 
 function VerifQuestion1(){
     reponse=document.getElementById("personnageQuestion1").value;

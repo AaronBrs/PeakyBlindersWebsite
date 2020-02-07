@@ -49,35 +49,35 @@ if((isset($_GET['id'])) AND ($_GET['id']>0))
       }
       ?>
     </header>
-    <div align='center'>
+    <div class='profil' align='center'>
         <h1>Profil de <?php echo $userinfo['pseudo'];?></h1>
-        <br/><br/>
-        Rang : <?php echo $userinfo['rang'];?><br/>
-        Pseudo : <?php echo $userinfo['pseudo'];?><br/>
-        Mail : <?php echo $userinfo['mail'];?><br/>
-        N°Identification : <?php echo $userinfo['id'];?><br/>
-        Avis sur la série : 
+        <br/>
+        <p>Rang : <?php echo $userinfo['rang'];?></p>
+        <p>Adresse mail : <?php echo $userinfo['mail'];?></p>
+        <p>Dernier avis :
         <?php 
         $sql = "SELECT textComm FROM COMMENTAIRES WHERE idMembre= ? ORDER BY dateComm DESC";
         $reqcommentaire=$bdd->prepare($sql);
         $reqcommentaire->execute(array($userinfo['id']));
         $commentaire=$reqcommentaire->fetch();
         echo $commentaire['textComm'];
-        ?>
-        <br/>
+        ?></p>
+        
         <?php 
         if(isset($_SESSION['id']) AND $userinfo['id']==$_SESSION['id'])
         {
         ?>
-            <a href="editionprofil.php">Editer mon profil</a>
-            <a href="deconnexion.php">Se déconnecter</a>
-            <?php
-            if($userinfo['rang']=='Membre'){
-            ?>
-            <a href="suppressionprofil.php">Supprimer mon compte</a>
-            <?php
-            }
-            ?>
+            <div class="boutonsProfil">
+              <a href="deconnexion.php">Se déconnecter</a><br>
+              <?php
+              if($userinfo['rang']=='Membre'){
+              ?>
+              <a href="editionprofil.php">Editer mon profil</a><br>
+              <a href="suppressionprofil.php">Supprimer mon compte</a><br>
+              <?php
+              }
+              ?>
+            </div>
         <?php
         }
         ?>

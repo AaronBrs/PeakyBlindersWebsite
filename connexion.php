@@ -6,7 +6,7 @@ $bdd = connect_bd();
 if(isset($_POST['formconnexion']))
 {
     $pseudoconnect=htmlspecialchars($_POST['pseudoconnect']);
-    $mdpconnect=htmlspecialchars($_POST['mdpconnect']);
+    $mdpconnect=sha1($_POST['mdpconnect']);
     if(!empty($pseudoconnect) AND !empty($mdpconnect))
     {
         $requser=$bdd->prepare("SELECT * FROM MEMBRES WHERE pseudo =  ? AND password = ?");
